@@ -3,11 +3,18 @@ import { SetThemeService } from '../../core/services/set-theme.service';
 import { HeaderDropdownComponent } from './header-dropdown/header-dropdown.component';
 import { UserComponent } from "../../shared/components/user/user.component";
 import { ThemeTogglerComponent } from '../../shared/components/theme-toggler/theme-toggler.component';
+import { IconComponent } from '../../shared/components/icon/icon.component';
+import { GT_ICONS_BASIC } from '../../shared/components/icon/enums/gt-icons.basic';
 
 @Component({
   selector: 'gt-header',
   standalone: true,
-  imports: [HeaderDropdownComponent, UserComponent, ThemeTogglerComponent],
+  imports: [
+    IconComponent,
+    HeaderDropdownComponent,
+    UserComponent,
+    ThemeTogglerComponent,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -17,6 +24,8 @@ export class HeaderComponent {
   public themeName!: string | null;
   // Welcome Name
   public welcomeName!:string | null;
+
+  protected readonly GT_ICONS_BASIC = GT_ICONS_BASIC;
 
   constructor(
     private setThemeService: SetThemeService,

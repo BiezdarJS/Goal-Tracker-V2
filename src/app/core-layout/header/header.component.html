@@ -16,7 +16,12 @@
       <gt-theme-toggler />
     </div>
     <div class="d-flex flex--center">
-        <button class="icon icon--info" (click)="handleInfoPopup()"></button>
+        <!-- <button class="icon icon--info" (click)="handleInfoPopup()"></button> -->
+        <gt-icon
+          [icon]="GT_ICONS_BASIC.INFO"
+          [size]="24"
+          [fillColor]="'black'"
+          (click)="handleInfoPopup()" />
     </div>
     <div class="d-flex flex--center user--desktop">
         <gt-user />

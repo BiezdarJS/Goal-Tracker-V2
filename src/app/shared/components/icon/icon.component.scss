@@ -1,0 +1,26 @@
+:host {
+    display: inline-flex;
+
+    .gt-icon {
+        display: inline-flex;
+        width: var(#{--gt-icon-size}, 24px);
+        height: var(#{--gt-icon-size}, 24px);
+        position: relative;
+
+        &--span {
+            width: var(#{--gt-icon-size}, 24px);
+            height: var(#{--gt-icon-size}, 24px);
+            display: inline-flex;
+        }
+    }
+
+    ::ng-deep {
+        .gt-icon svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            fill: var(--gt-icon-fill-color);
+            stroke: var(--gt-icon-stroke-color);
+        }
+    }
+}
