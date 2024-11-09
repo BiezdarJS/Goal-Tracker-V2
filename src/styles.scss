@@ -1,4 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+*
+*  Project Name: Goal and Time Management
+*  Version: 2.0
+*  Author: Piotr Deja
+*
+*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+// =============================================================================
+// CSS RESET
+// =============================================================================
+@import 'assets/scss/css-reset';
+
+
+// =============================================================================
+// SETTINGS
+// =============================================================================
+@import 'assets/scss/mq';
+@import 'assets/scss/fonts';
+@import 'assets/scss/colors';
+
+
+// =============================================================================
+// COMMON STYLES TO ALL PROJECTS
+// =============================================================================
+@import 'assets/scss/utils';
+
+// =============================================================================
+// THEME
+// =============================================================================
+@import 'assets/scss/theme';

@@ -1,0 +1,25 @@
+@import 'mq';
+@import 'variables-misc';
+
+.user {
+  background: url(https://picsum.photos/200/300) center no-repeat;
+  background-size: 32px 32px;
+  border: 0;
+  box-shadow: $box-shadow;
+  clip-path: circle(50%);
+  display: inline-block;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  display: block;
+  margin: 0px;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  z-index: 0;
+  &--lg {
+      background-size: 64px 64px;
+      width: 80px;
+      height: 80px;
+  }
+
+}

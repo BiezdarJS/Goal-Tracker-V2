@@ -1,0 +1,41 @@
+@import 'colors';
+
+.header-dropdown {
+  background-color: $white;
+  box-shadow: 0 0 10px #888;
+  padding: 20px;
+  opacity: 0;
+  position: absolute;
+  border-radius: 6px;
+  overflow: hidden;
+  top: 100px;
+  right: 0;
+  transition: all .2s ease;
+  z-index: 1;
+  width: 140px;
+  visibility: hidden;
+  &-list {
+    margin: 0;
+  }
+  &__link {
+    align-items: center;
+    color: $secondText;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    padding: 10px 0;
+    i {
+      width: 20px;
+      height: 20px;
+    }
+    span {
+      display: inline-block;
+      margin-left: 10px;
+    }
+    &:hover {
+      .icon {
+        background-color: $accent;
+      }
+    }
+  }
+}

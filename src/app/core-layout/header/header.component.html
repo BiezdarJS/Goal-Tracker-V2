@@ -1,1 +1,27 @@
-<p>header works!</p>
+<section class="header">
+  <div class="header__left">
+    <button class="user user--mobile"></button>
+    <h2 class="title title--main">
+      Good morning, {{ this.welcomeName }} <br>
+      <span class="smaller">
+          Welcome back, nice to see you again!
+      </span>
+    </h2>
+  </div>
+  <div class="header__right">
+    <div class="d-flex flex--center">
+        <!-- <gt-search-input></gt-search-input> -->
+    </div>
+    <div class="d-flex flex--center justify-content-end">
+      <gt-theme-toggler />
+    </div>
+    <div class="d-flex flex--center">
+        <button class="icon icon--info" (click)="handleInfoPopup()"></button>
+    </div>
+    <div class="d-flex flex--center user--desktop">
+        <gt-user />
+        <gt-header-dropdown/>
+    </div>
+  </div>
+</section>
+
