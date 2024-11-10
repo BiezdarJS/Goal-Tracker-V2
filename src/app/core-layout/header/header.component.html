@@ -2,7 +2,7 @@
   <div class="header__left">
     <button class="user user--mobile"></button>
     <h2 class="title title--main">
-      Good morning, {{ this.welcomeName }} <br>
+      Good morning, {{ this.welcomeName() }} <br>
       <span class="smaller">
           Welcome back, nice to see you again!
       </span>
@@ -19,7 +19,7 @@
         <gt-icon
           [icon]="GT_ICONS_BASIC.INFO"
           [size]="24"
-          [fillColor]="'black'"
+          [fillColor]="IconColorEnum.DEFAULT"
           (click)="handleInfoPopup()" />
     </div>
     <div class="flex center-all user--desktop">

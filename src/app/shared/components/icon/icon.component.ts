@@ -1,7 +1,6 @@
 import {AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
 import { NgStyle } from '@angular/common';
 import { GT_ICONS_BASIC } from './enums/gt-icons.basic';
-
 /** Globalny komponent do wyświetlania ikon w aplikacji. */
 @Component({
     selector: 'gt-icon',
@@ -29,7 +28,7 @@ export class IconComponent implements AfterViewInit, OnChanges {
     /** Referencja elementu ikony. */
     @ViewChild('icon') iconRef!: ElementRef;
 
-    importIcon(path: string, icon: string): Promise<any> {
+    private importIcon(path: string, icon: string): Promise<any> {
         return import(`./${path}/${icon}/index.js`);
     }
 
@@ -39,14 +38,14 @@ export class IconComponent implements AfterViewInit, OnChanges {
           this.loadIcon();
         }
     }
-
+    /** OnChanges. */
     ngOnChanges(changes: SimpleChanges): void {
         if (changes['icon']) {
             this.loadIcon();
         }
     }
 
-    /** Load the icon based on input */
+    /** Ładuje ikonę na podstawie danych wejściowych. */
     private loadIcon(): void {
         const path = this.getFilePath();
         if (path && this.icon) {
@@ -56,6 +55,7 @@ export class IconComponent implements AfterViewInit, OnChanges {
         }
     }
 
+    /** Pobiera ścieżkę pliku. */
     private getFilePath(): string | null {
         if (Object.values(GT_ICONS_BASIC).includes(this.icon as GT_ICONS_BASIC)) {
             return 'icons-basic';

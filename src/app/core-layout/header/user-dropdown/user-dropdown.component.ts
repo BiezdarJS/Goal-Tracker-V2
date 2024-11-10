@@ -2,25 +2,28 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../../core/services/auth.service';
 import { IconComponent } from "../../../shared/components/icon/icon.component";
 import { GT_ICONS_BASIC } from '../../../shared/components/icon/enums/gt-icons.basic';
-import { ICON_COLOR } from '../../../shared/enums/icon-color.enum';
-
+import { IconColorEnum } from '../../../shared/enums/icon-color.enum';
+/** Globalny komponent dla menu usera w headerze */
 @Component({
   selector: 'gt-header-dropdown',
   standalone: true,
   imports: [IconComponent],
-  templateUrl: './header-dropdown.component.html',
-  styleUrl: './header-dropdown.component.scss'
+  templateUrl: './user-dropdown.component.html',
+  styleUrl: './user-dropdown.component.scss'
 })
 export class HeaderDropdownComponent {
-
+  /** Enum dla dostępnych ikon */
   protected readonly GT_ICONS_BASIC = GT_ICONS_BASIC;
-  protected readonly ICON_COLOR = ICON_COLOR;
+  /** Enum dla dostępnych kolorów ikon */
+  protected readonly IconColorEnum = IconColorEnum;
 
+  /** Konstruktor klasy */
   constructor(
     private authService: AuthService,
   ) {}
 
-  logout() {
+  /** Obsługa wylogowania */
+  public logout(): void {
     this.authService.logout();
   }
 }

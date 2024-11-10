@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SetThemeService } from '../../../core/services/set-theme.service';
 
+/** Globalny komponent do zmiany motywu light/dark */
 @Component({
   selector: 'gt-theme-toggler',
   standalone: true,
@@ -10,11 +11,13 @@ import { SetThemeService } from '../../../core/services/set-theme.service';
 })
 export class ThemeTogglerComponent {
 
+  /** Konstruktor klasy */
   constructor(
     private setThemeService: SetThemeService,
   ) {}
 
-  toggleTheme() {
+  /** Obsługa przełączamia motywu light/dark */
+  public toggleTheme() {
     this.setThemeService.toggleTheme();
   }
 }

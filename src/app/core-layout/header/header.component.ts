@@ -1,11 +1,11 @@
-import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
-import { SetThemeService } from '../../core/services/set-theme.service';
-import { HeaderDropdownComponent } from './header-dropdown/header-dropdown.component';
+import { AfterViewInit, Component, computed, ElementRef, EventEmitter, OnInit, Output, signal, Signal, ViewChild, WritableSignal } from '@angular/core';
+import { HeaderDropdownComponent } from './user-dropdown/user-dropdown.component';
 import { UserComponent } from "./user/user.component";
 import { ThemeTogglerComponent } from '../../shared/components/theme-toggler/theme-toggler.component';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { GT_ICONS_BASIC } from '../../shared/components/icon/enums/gt-icons.basic';
-
+import { IconColorEnum } from '../../shared/enums/icon-color.enum';
+/** Globalny komponent headera aplikacji */
 @Component({
   selector: 'gt-header',
   standalone: true,
@@ -18,27 +18,26 @@ import { GT_ICONS_BASIC } from '../../shared/components/icon/enums/gt-icons.basi
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, AfterViewInit {
+  /** Event do wyświetlania popupu powitalnego */
   @Output() infoPopupEvent = new EventEmitter();
+  /** Checkbox sprawdzający aktywny motyw light/dark */
   @ViewChild('checkbox') checkbox!: ElementRef;
-  public themeName!: string | null;
-  // Welcome Name
-  public welcomeName!:string | null;
-
+  /** Imię Usera - prywatne */
+  private _welcomeName: WritableSignal<string | null> = signal(null);
+  /** Imię Usera - publiczne */
+  public welcomeName: Signal<string | null> = computed(() => this._welcomeName());
+  /** Enum dla dostępnych ikon */
   protected readonly GT_ICONS_BASIC = GT_ICONS_BASIC;
+  /** Enum dla dostępnych kolorów ikon */
+  protected readonly IconColorEnum = IconColorEnum;
 
-  constructor(
-    private setThemeService: SetThemeService,
-  ) {}
-
-
+  /** OnInit */
   ngOnInit():void {
-    this.setThemeService.activeTheme.subscribe(themeName => this.themeName = themeName);
-    // Welcome Name
-    this.welcomeName = sessionStorage.getItem('welcome-name');
+    this._welcomeName.set(sessionStorage.getItem('welcome-name'));
   }
 
-
+  /** AfterViewInit */
   ngAfterViewInit():void {
     // if (sessionStorage.getItem('theme') === 'theme-dark') {
     //   this.checkbox.nativeElement.checked = true;
@@ -47,11 +46,8 @@ export class HeaderComponent {
     // }
   }
 
+  /** Wyświetla komunikat powitalny z instrukcjami */
   public handleInfoPopup() {
     this.infoPopupEvent.emit();
-  }
-
-  public toggleTheme() {
-    this.setThemeService.toggleTheme();
   }
 }
