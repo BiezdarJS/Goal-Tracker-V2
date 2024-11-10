@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SetThemeService } from '../../../core/services/set-theme.service';
 
 /** Globalny komponent do zmiany motywu light/dark */
@@ -7,7 +7,8 @@ import { SetThemeService } from '../../../core/services/set-theme.service';
   standalone: true,
   imports: [],
   templateUrl: './theme-toggler.component.html',
-  styleUrl: './theme-toggler.component.scss'
+  styleUrl: './theme-toggler.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ThemeTogglerComponent {
 

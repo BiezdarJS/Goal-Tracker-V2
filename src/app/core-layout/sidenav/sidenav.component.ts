@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @Component({
   selector: 'gt-sidenav',
   standalone: true,
-  imports: [],
+  imports: [NavBarComponent],
   templateUrl: './sidenav.component.html',
-  styleUrl: './sidenav.component.scss'
+  styleUrl: './sidenav.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SidenavComponent {
 

@@ -2,7 +2,7 @@
 @import 'variables-misc';
 
 .user {
-  background: url(https://dummyimage.com/600x400/999/fff) center no-repeat;
+  background: url(/assets/images/avatar.png) center no-repeat;
   background-size: 32px 32px;
   border: 0;
   box-shadow: $box-shadow;
@@ -21,5 +21,28 @@
       width: 80px;
       height: 80px;
   }
+  &--desktop {
 
+    position: relative;
+      @include mobile {
+          border: 0;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+          white-space: nowrap;
+      }
+    &:hover {
+      ::ng-deep {
+        .header-dropdown {
+          opacity: 1;
+          visibility: visible;
+          top: 58px;
+        }
+      }
+    }
+  }
 }

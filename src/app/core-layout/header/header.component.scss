@@ -1,5 +1,11 @@
 @import 'mq';
 
+:host {
+  @include desktop-sm {
+    grid-area: header;
+}
+}
+
 .header {
   background-color: #fbfbfd;
   display: grid;
@@ -58,8 +64,23 @@
   }
 }
 
-
 .user {
+  &--mobile {
+    @include mobile {
+        display: block;
+    }
+    @include desktop-sm {
+        display: none;
+    }
+    width: 50px;
+    height: 50px;
+    background-size: 40px 40px;
+    @media (max-width: 500px) {
+        width: 40px;
+        height: 40px;
+        background-size: 30px 30px;
+    }
+}
   &--desktop {
     position: relative;
       @include mobile {
@@ -82,21 +103,5 @@
         }
       }
     }
-  }
-  &--mobile {
-      @include mobile {
-          display: block;
-      }
-      @include desktop-sm {
-          display: none;
-      }
-      width: 50px;
-      height: 50px;
-      background-size: 40px 40px;
-      @media (max-width: 500px) {
-          width: 40px;
-          height: 40px;
-          background-size: 30px 30px;
-      }
   }
 }

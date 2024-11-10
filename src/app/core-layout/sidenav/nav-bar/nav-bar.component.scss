@@ -1,0 +1,31 @@
+@import 'mq';
+
+.nav-bar {
+  padding: 0 30px;
+  @include desktop-sm {
+      width: 200px;
+  }
+  @include desktop-md {
+      width: 250px;
+  }
+  @include mobile {
+      width: 100%;
+      padding: 0;
+      text-align: center;
+  }
+  .site-logo {
+      @include mobile {
+          display: none;
+      }
+  }
+}
+
+.site-logo {
+  padding: 0 30px;
+  &__img {
+      display: inline-block;
+      width: 57px;
+      height: 60px;
+      margin: 10px 0;
+  }
+}

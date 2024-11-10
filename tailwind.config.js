@@ -7,7 +7,11 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'tablet': '640px',
+      },
+    },
   },
   plugins: [
     function ({ addUtilities }) {
@@ -20,5 +24,6 @@ module.exports = {
       });
     },
   ],
+
 }
 

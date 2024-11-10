@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, computed, ElementRef, EventEmitter, OnInit, Output, signal, Signal, ViewChild, WritableSignal } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, computed, ElementRef, EventEmitter, OnInit, Output, signal, Signal, ViewChild, WritableSignal } from '@angular/core';
 import { HeaderDropdownComponent } from './user-dropdown/user-dropdown.component';
 import { UserComponent } from "./user/user.component";
 import { ThemeTogglerComponent } from '../../shared/components/theme-toggler/theme-toggler.component';
@@ -16,7 +16,8 @@ import { IconColorEnum } from '../../shared/enums/icon-color.enum';
     UserComponent,
   ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
   /** Event do wyświetlania popupu powitalnego */

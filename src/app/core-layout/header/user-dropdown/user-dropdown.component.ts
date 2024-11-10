@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AuthService } from '../../../core/services/auth.service';
 import { IconComponent } from "../../../shared/components/icon/icon.component";
 import { GT_ICONS_BASIC } from '../../../shared/components/icon/enums/gt-icons.basic';
@@ -9,7 +9,8 @@ import { IconColorEnum } from '../../../shared/enums/icon-color.enum';
   standalone: true,
   imports: [IconComponent],
   templateUrl: './user-dropdown.component.html',
-  styleUrl: './user-dropdown.component.scss'
+  styleUrl: './user-dropdown.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderDropdownComponent {
   /** Enum dla dostępnych ikon */
