@@ -2,14 +2,14 @@
   <ul class="header-dropdown-list list">
     <li class="header-dropdown__item">
       <a class="header-dropdown__link" routerLink="/settings">
-        <gt-icon [icon]="GT_ICONS_BASIC.GEAR" [size]="20" [strokeColor]="'#aeafcb'" />
+        <gt-icon [icon]="GT_ICONS_BASIC.GEAR" [size]="20" [strokeColor]="ICON_COLOR.DEFAULT" />
         <span>Settings</span>
       </a>
     </li>
     <li class="header-dropdown__item">
       <a class="header-dropdown__link" routerLink="/sign-in" (click)="logout()">
         <!-- <i class="icon icon--logout"></i> -->
-        <gt-icon [icon]="GT_ICONS_BASIC.SWITCHER" [size]="20" [fillColor]="'#aeafcb'" />
+        <gt-icon [icon]="GT_ICONS_BASIC.SWITCHER" [size]="20" [fillColor]="ICON_COLOR.DEFAULT" />
         <span>Logout</span>
       </a>
     </li>

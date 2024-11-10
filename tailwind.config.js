@@ -9,6 +9,16 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.center-all': {
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        },
+      });
+    },
+  ],
 }
 

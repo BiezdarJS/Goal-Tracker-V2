@@ -9,21 +9,20 @@
     </h2>
   </div>
   <div class="header__right">
-    <div class="d-flex flex--center">
+    <div class="flex center-all">
         <!-- <gt-search-input></gt-search-input> -->
     </div>
-    <div class="d-flex flex--center justify-content-end">
+    <div class="flex center-all justify-end">
       <gt-theme-toggler />
     </div>
-    <div class="d-flex flex--center">
-        <!-- <button class="icon icon--info" (click)="handleInfoPopup()"></button> -->
+    <div class="flex center-all">
         <gt-icon
           [icon]="GT_ICONS_BASIC.INFO"
           [size]="24"
           [fillColor]="'black'"
           (click)="handleInfoPopup()" />
     </div>
-    <div class="d-flex flex--center user--desktop">
+    <div class="flex center-all user--desktop">
         <gt-user />
         <gt-header-dropdown/>
     </div>
