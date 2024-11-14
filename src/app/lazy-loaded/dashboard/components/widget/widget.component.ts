@@ -17,25 +17,18 @@ export class WidgetComponent {
     switch(this.dashboardWidgetType()) {
       case(DashboardWidgetTypeEnum.SUMMARY) :
         return 'widget--summary widget--28';
-        break;
       case(DashboardWidgetTypeEnum.BALANCE_OF_GOALS) :
         return 'widget--44';
-        break;
       case(DashboardWidgetTypeEnum.CALENDAR) :
         return 'widget--28 flex center-all'
-        break;
       case(DashboardWidgetTypeEnum.PROGRESS_TOWARDS_THE_GOAL) :
         return 'widget--progress-towards-the-goal'
-        break;
       case(DashboardWidgetTypeEnum.MY_ACTIVITY) :
         return 'widget--my-activity'
-        break;
       case(DashboardWidgetTypeEnum.HEALTH_AND_SPORTS) :
         return 'widget--health-and-sports'
-        break;
       case(DashboardWidgetTypeEnum.TODAY_TASKS) :
         return 'widget--today-tasks'
-        break;
     }
     return '';
   });
