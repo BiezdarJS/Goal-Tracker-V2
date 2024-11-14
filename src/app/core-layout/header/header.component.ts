@@ -5,7 +5,7 @@ import { ThemeTogglerComponent } from '../../shared/components/theme-toggler/the
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { GT_ICONS_BASIC } from '../../shared/components/icon/enums/gt-icons.basic';
 import { IconColorEnum } from '../../shared/enums/icon-color.enum';
-/** Globalny komponent headera aplikacji */
+/** Komponent headera aplikacji */
 @Component({
   selector: 'gt-header',
   standalone: true,

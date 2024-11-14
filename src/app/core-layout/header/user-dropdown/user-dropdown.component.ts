@@ -3,7 +3,7 @@ import { AuthService } from '../../../core/services/auth.service';
 import { IconComponent } from "../../../shared/components/icon/icon.component";
 import { GT_ICONS_BASIC } from '../../../shared/components/icon/enums/gt-icons.basic';
 import { IconColorEnum } from '../../../shared/enums/icon-color.enum';
-/** Globalny komponent dla menu usera w headerze */
+/** Komponent dla menu usera w headerze */
 @Component({
   selector: 'gt-header-dropdown',
   standalone: true,

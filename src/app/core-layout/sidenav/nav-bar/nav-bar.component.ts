@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MenuComponent } from '../menu/menu.component';
-
+/** Komponent nawigacji wewnątrz sidenav */
 @Component({
   selector: 'gt-nav-bar',
   standalone: true,

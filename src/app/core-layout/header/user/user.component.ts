@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-/** Globalny komponent dla ikonki usera w aplikacji */
+/** Komponent dla ikonki usera w aplikacji */
 @Component({
   selector: 'gt-user',
   standalone: true,

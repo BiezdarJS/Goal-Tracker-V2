@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { GT_ICONS_BASIC } from '../../../shared/components/icon/enums/gt-icons.basic';
 import { IconColorEnum } from '../../../shared/enums/icon-color.enum';
-
+/** Komponent menu wewnątrz nav-bar */
 @Component({
   selector: 'gt-menu',
   standalone: true,

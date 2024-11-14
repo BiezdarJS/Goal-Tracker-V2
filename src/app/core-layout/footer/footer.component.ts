@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+/** Komponent footera aplikacji */
 @Component({
   selector: 'gt-footer',
   standalone: true,
