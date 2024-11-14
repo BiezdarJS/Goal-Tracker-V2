@@ -1,0 +1,42 @@
+import { Component, computed, input, InputSignal, Signal } from '@angular/core';
+import { DashboardWidgetTypeEnum } from '../../enums/dashboard-widget-type.enum';
+import { NgClass } from '@angular/common';
+/** Komponent pojedynczego widgetu w dashboard */
+@Component({
+  selector: 'gt-widget',
+  templateUrl: './widget.component.html',
+  standalone: true,
+  imports: [NgClass],
+  styleUrl: './widget.component.scss'
+})
+export class WidgetComponent {
+  /** Input przyjmujący informację o obecnie wyświetlanym widgecie */
+  public dashboardWidgetType: InputSignal<DashboardWidgetTypeEnum | undefined> = input();
+  /** Dodatkowe klasy dla obecnie wyświetlanego widgetu */
+  public currentClasses: Signal<string> = computed(() => {
+    switch(this.dashboardWidgetType()) {
+      case(DashboardWidgetTypeEnum.SUMMARY) :
+        return 'widget--summary widget--28';
+        break;
+      case(DashboardWidgetTypeEnum.BALANCE_OF_GOALS) :
+        return 'widget--44';
+        break;
+      case(DashboardWidgetTypeEnum.CALENDAR) :
+        return 'widget--28 flex center-all'
+        break;
+      case(DashboardWidgetTypeEnum.PROGRESS_TOWARDS_THE_GOAL) :
+        return 'widget--progress-towards-the-goal'
+        break;
+      case(DashboardWidgetTypeEnum.MY_ACTIVITY) :
+        return 'widget--my-activity'
+        break;
+      case(DashboardWidgetTypeEnum.HEALTH_AND_SPORTS) :
+        return 'widget--health-and-sports'
+        break;
+      case(DashboardWidgetTypeEnum.TODAY_TASKS) :
+        return 'widget--today-tasks'
+        break;
+    }
+    return '';
+  });
+}
