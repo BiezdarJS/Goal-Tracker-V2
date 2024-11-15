@@ -1,6 +1,7 @@
 @import 'mq';
 
 :host {
+  display: block;
   ::ng-deep {
     gt-icon {
       padding: 5px 15px;

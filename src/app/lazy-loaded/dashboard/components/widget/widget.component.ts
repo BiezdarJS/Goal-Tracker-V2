@@ -1,12 +1,10 @@
-import { ChangeDetectionStrategy, Component, computed, input, InputSignal, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, HostBinding, input, InputSignal, Signal } from '@angular/core';
 import { DashboardWidgetTypeEnum } from '../../enums/dashboard-widget-type.enum';
-import { NgClass } from '@angular/common';
 /** Komponent pojedynczego widgetu w dashboard */
 @Component({
   selector: 'gt-widget',
   templateUrl: './widget.component.html',
   standalone: true,
-  imports: [NgClass],
   styleUrl: './widget.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -33,4 +31,8 @@ export class WidgetComponent {
     }
     return '';
   });
+
+  @HostBinding('class') get hostClasses(): string {
+    return this.currentClasses();
+  }
 }

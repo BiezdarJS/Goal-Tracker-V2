@@ -2,12 +2,45 @@
 @import 'colors';
 @import 'variables-misc';
 
+:host {
+  &.widget {
+    &--28 {
+      width: calc(28% - 15px);
+      @include mobile {
+          width: 100%;
+      }
+    }
+    &--44 {
+        width: calc(44% - 15px);
+        @include mobile {
+            width: 100%;
+        }
+    }
+    &--progress-towards-the-goal {
+        grid-area: progressTowards;
+    }
+    &--portion-of-motivation {
+        grid-area: motivation;
+    }
+    &--my-activity {
+        grid-area: myActivity;
+    }
+    &--health-and-sports {
+        grid-area: healthAndSports;
+    }
+    &--today-tasks {
+        grid-area: todayTasks;
+    }
+  }
+}
+
 .widget {
   background-color: $white;
   box-shadow: $box-shadow;
   border-radius: 16px;
   min-width: 0;
   position: relative;
+  height: 100%;
   @include mobile {
       width: auto;
       max-width: 500px;
@@ -20,31 +53,5 @@
   @include desktop-md {
       padding: 27px;
   }
-  &--28 {
-      width: calc(28% - 15px);
-      @include mobile {
-          width: 100%;
-      }
-  }
-  &--44 {
-      width: calc(44% - 15px);
-      @include mobile {
-          width: 100%;
-      }
-  }
-  &--progress-towards-the-goal {
-      grid-area: progressTowards;
-  }
-  &--portion-of-motivation {
-      grid-area: motivation;
-  }
-  &--my-activity {
-      grid-area: myActivity;
-  }
-  &--health-and-sports {
-      grid-area: healthAndSports;
-  }
-  &--today-tasks {
-      grid-area: todayTasks;
-  }
+
 }

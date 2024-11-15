@@ -1,0 +1,34 @@
+@import 'mq';
+
+.dashboard {
+  &__top {
+    @include desktop-sm {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 22.5px;
+    }
+    @include mobile {
+        display: block;
+        padding: 0 30px;
+    }
+  }
+  &__bottom {
+
+      @include desktop-sm {
+          display: grid;
+          grid-template-columns: 2.8fr 4fr 3.2fr;
+          grid-template-rows: 380px 155px 220px;
+          gap: 22.5px;
+          grid-template-areas:
+          "progressTowards myActivity todayTasks"
+          "progressTowards healthAndSports todayTasks"
+          "motivation healthAndSports todayTasks";
+          width: auto;
+          margin: 22.5px 0 0;
+      }
+      @include mobile {
+          display: block;
+          padding: 22.5px 30px 150px!important;
+      }
+  }
+}

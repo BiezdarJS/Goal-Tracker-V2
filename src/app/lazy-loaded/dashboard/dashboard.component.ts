@@ -3,6 +3,7 @@ import { DashboardWidgetTypeEnum } from './enums/dashboard-widget-type.enum';
 import { CommonModule } from '@angular/common';
 import { WidgetComponent } from './components/widget/widget.component';
 import { WidgetSummaryComponent } from './components/widgets/widget-summary/widget-summary.component';
+import { WidgetBalanceOfGoalsComponent } from "./components/widgets/widget-balance-of-goals/widget-balance-of-goals.component";
 /** Komponent dla widoku dashboard zawierający widgety do monitorowania celów */
 @Component({
   selector: 'gt-dashboard',
@@ -11,8 +12,9 @@ import { WidgetSummaryComponent } from './components/widgets/widget-summary/widg
   imports: [
     CommonModule,
     WidgetComponent,
-    WidgetSummaryComponent
-  ],
+    WidgetSummaryComponent,
+    WidgetBalanceOfGoalsComponent
+],
   styleUrl: './dashboard.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
