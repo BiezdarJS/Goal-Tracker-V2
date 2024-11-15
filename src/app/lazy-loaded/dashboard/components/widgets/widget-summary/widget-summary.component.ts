@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ButtonComponent } from '@gtShared/button/button.component';
+import { ButtonComponent } from '@gtSharedComponents/button/button.component';
 import { IconColorEnum } from '@gtShared/enums/icon-color.enum';
 import { GT_ICONS_BASIC } from '@gtSharedComponents/icon/enums/gt-icons.basic';
 import { IconComponent } from '@gtSharedComponents/icon/icon.component';

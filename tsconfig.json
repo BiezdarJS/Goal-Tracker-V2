@@ -26,6 +26,9 @@
     ],
     "paths": {
       "@env/*": ["src/environments/*"],
+      "@gtCoreGuards/*": ["src/app/core/guards/*"],
+      "@gtCoreModels/*": ["src/app/core/models/*"],
+      "@gtCoreServices/*": ["src/app/core/services/*"],
       "@gtSharedInterfaces/*": ["src/app/shared/interfaces/*"],
       "@gtSharedComponents/*": ["src/app/shared/components/*"],
       "@gtSharedDirectives/*": ["src/app/shared/directives/*"],

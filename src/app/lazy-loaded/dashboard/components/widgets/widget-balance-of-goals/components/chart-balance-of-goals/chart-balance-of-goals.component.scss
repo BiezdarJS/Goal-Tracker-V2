@@ -1,0 +1,10 @@
+@import 'mq';
+
+:host {
+  padding: 0 10px;
+  width: 40%;
+    @include mobile {
+      margin: 0 auto;
+      width: auto;
+    }
+}

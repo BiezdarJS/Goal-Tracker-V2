@@ -3,6 +3,10 @@
 
 .balance-list {
   display: inline-block;
+  width: 80%;
+  @include mobile {
+      width: auto;
+  }
   @include desktop-sm {
       margin: 0 0 0 20px;
   }
