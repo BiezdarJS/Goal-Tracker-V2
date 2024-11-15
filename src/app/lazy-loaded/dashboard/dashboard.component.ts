@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { DashboardWidgetTypeEnum } from './enums/dashboard-widget-type.enum';
 import { CommonModule } from '@angular/common';
 import { WidgetComponent } from './components/widget/widget.component';
@@ -8,7 +8,8 @@ import { WidgetComponent } from './components/widget/widget.component';
   templateUrl: './dashboard.component.html',
   standalone: true,
   imports: [CommonModule, WidgetComponent],
-  styleUrl: './dashboard.component.scss'
+  styleUrl: './dashboard.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent {
   /** Dostępne typy widgetów w dashboard */

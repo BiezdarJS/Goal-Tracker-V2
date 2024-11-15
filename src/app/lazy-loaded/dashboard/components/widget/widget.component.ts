@@ -1,4 +1,4 @@
-import { Component, computed, input, InputSignal, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, InputSignal, Signal } from '@angular/core';
 import { DashboardWidgetTypeEnum } from '../../enums/dashboard-widget-type.enum';
 import { NgClass } from '@angular/common';
 /** Komponent pojedynczego widgetu w dashboard */
@@ -7,7 +7,8 @@ import { NgClass } from '@angular/common';
   templateUrl: './widget.component.html',
   standalone: true,
   imports: [NgClass],
-  styleUrl: './widget.component.scss'
+  styleUrl: './widget.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WidgetComponent {
   /** Input przyjmujący informację o obecnie wyświetlanym widgecie */
