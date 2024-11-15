@@ -1,5 +1,13 @@
 @import 'mq';
 
+:host {
+  ::ng-deep {
+    gt-icon {
+      padding: 5px 15px;
+    }
+  }
+}
+
 .summary {
   @include desktop-sm {
       padding: 0;

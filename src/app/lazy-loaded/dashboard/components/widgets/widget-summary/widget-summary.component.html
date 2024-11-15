@@ -9,103 +9,42 @@
       [fillColor]="IconColorEnum.DEFAULT"/>
   </gt-button>
 </div>
-<!-- TODO - należałoby zamienić tą listę na pętlę po configu -->
 <ul class="summary list">
-  <li class="summary__item">
-    <gt-icon
-            [icon]="GT_ICONS_BASIC.TARGET_WITH_ARROW"
-            [size]="30"
-            [fillColor]="'#51e2ae'"/>
-      <i class="summary__icon summary__icon--goals"></i>
-      <p class="summary__number" *ngIf="this.allGoals; else emptyParagraph">
-          <span style="display: block;" class="subhead">
-              <!-- {{ this.allGoals.length }} -->
-          </span>
-          <span class="smaller">
-              Goals
-          </span>
-      </p>
-      <ng-template #emptyParagraph>
+  @for (item of summaryWidgetConfig; track item) {
+    <li class="summary__item">
+      <gt-icon
+              [icon]="item.iconName"
+              [size]="30"
+              [fillColor]="item.iconColor"/>
         <p class="summary__number">
-          <span style="display: block;" class="subhead">
-            ?
-        </span>
-        <span class="smaller">
-            Goals
-        </span>
+            <span style="display: block;" class="subhead">
+                <!-- {{ this.allGoals.length }} -->
+            </span>
+            <span class="smaller">
+                {{ item.itemName }}
+            </span>
         </p>
-      </ng-template>
-      <div class="summary__right">
-          <p class="summary__txt font-additional">
-              3 completed
-          </p>
-          <a href="#" class="summary__more">
-            <gt-icon
-              [icon]="GT_ICONS_BASIC.ARROW_RIGHT"
-              [size]="14"
-              [strokeColor]="'#1A1926'"/>
-          </a>
-      </div>
-  </li>
-  <li class="summary__item">
-    <gt-icon
-        [icon]="GT_ICONS_BASIC.TASK"
-        [size]="30"
-        [fillColor]="'#a7b8ff'"/>
-      <i class="summary__icon summary__icon--tasks"></i>
-      <p class="summary__number" *ngIf="this.allTasks; else emptyParagraph">
-          <span style="display: block;" class="subhead">
-              <!-- {{ this.allTasks.length }} -->
-          </span>
-          <span class="smaller">
-              Tasks
-          </span>
-      </p>
-      <ng-template #emptyParagraph>
-        <p class="summary__number">
-          <span style="display: block;" class="subhead">
-            ?
-        </span>
-        <span class="smaller">
-            Goals
-        </span>
-        </p>
-      </ng-template>
-      <div class="summary__right">
-          <p class="summary__txt font-additional">
-              6 subtasks
-          </p>
-          <a href="#" class="summary__more">
-            <gt-icon
-              [icon]="GT_ICONS_BASIC.ARROW_RIGHT"
-              [size]="14"
-              [strokeColor]="'#1A1926'"/>
-          </a>
-      </div>
-  </li>
-  <li class="summary__item">
-    <gt-icon
-    [icon]="GT_ICONS_BASIC.LOOP"
-    [size]="30"
-    [fillColor]="'#ffa38f'"/>
-      <p class="summary__number">
-          <span style="display: block;" class="subhead">
+        <ng-template #emptyParagraph>
+          <p class="summary__number">
+            <span style="display: block;" class="subhead">
               ?
           </span>
           <span class="smaller">
-              Habits
+              {{ item.additionalText }}
           </span>
-      </p>
-      <div class="summary__right">
-          <p class="summary__txt font-additional">
-              2 new habits
           </p>
-          <a href="#" class="summary__more">
-            <gt-icon
-              [icon]="GT_ICONS_BASIC.ARROW_RIGHT"
-              [size]="14"
-              [strokeColor]="'#1A1926'"/>
-          </a>
-      </div>
-  </li>
+        </ng-template>
+        <div class="summary__right">
+            <p class="summary__txt font-additional">
+                3 {{ item.additionalText }}
+            </p>
+            <a href="#" class="summary__more">
+              <gt-icon
+                [icon]="GT_ICONS_BASIC.ARROW_RIGHT"
+                [size]="14"
+                [strokeColor]="item.arrowRightColor"/>
+            </a>
+        </div>
+    </li>
+  }
 </ul>
