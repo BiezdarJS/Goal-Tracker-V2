@@ -1,0 +1,7 @@
+@import 'mq';
+
+:host {
+  @include desktop-sm {
+    grid-area: footer;
+  }
+}
