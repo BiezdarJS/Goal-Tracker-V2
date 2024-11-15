@@ -22,7 +22,7 @@ export class IconComponent implements AfterViewInit, OnChanges {
     /** Rodzaj ikony. */
     @Input() icon!: GT_ICONS_BASIC;
     /** Wielkość ikony. */
-    @Input() size: 48 | 40 | 32 | 30 | 24 | 22 | 20 | 19 | 18 | 17 | 16 | 14 | 12 = 24;
+    @Input() size: 50 | 48 | 40 | 32 | 30 | 24 | 22 | 20 | 19 | 18 | 17 | 16 | 14 | 12 = 24;
     @Input() fillColor!: string;
     @Input() strokeColor!: string;
     /** Referencja elementu ikony. */

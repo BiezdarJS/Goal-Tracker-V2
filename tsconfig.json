@@ -3,6 +3,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
@@ -22,7 +23,16 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@env/*": ["src/environments/*"],
+      "@gtSharedInterfaces/*": ["src/app/shared/interfaces/*"],
+      "@gtSharedComponents/*": ["src/app/shared/components/*"],
+      "@gtSharedDirectives/*": ["src/app/shared/directives/*"],
+      "@gtSharedPipes/*": ["src/app/shared/pipes/*"],
+      "@gtSharedServices/*": ["src/app/shared/services/*"],
+      "@gtShared/*": ["src/app/shared/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
