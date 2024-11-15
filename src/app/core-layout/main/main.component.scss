@@ -1,0 +1,16 @@
+@import 'mq';
+
+:host {
+  @include desktop-sm {
+    grid-area: main;
+    padding: 15px 25px 0;
+      width: auto;
+  }
+  @include mobile {
+    padding-top: 35px;
+  }
+  @include desktop-md {
+      padding: 15px 45px 0;
+  }
+}
+

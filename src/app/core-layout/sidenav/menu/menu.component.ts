@@ -2,11 +2,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { GT_ICONS_BASIC } from '../../../shared/components/icon/enums/gt-icons.basic';
 import { IconColorEnum } from '../../../shared/enums/icon-color.enum';
+import { RouterModule } from '@angular/router';
 /** Komponent menu wewnątrz nav-bar */
 @Component({
   selector: 'gt-menu',
   standalone: true,
-  imports: [IconComponent],
+  imports: [IconComponent, RouterModule],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

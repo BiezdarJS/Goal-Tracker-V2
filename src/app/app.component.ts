@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { GoalTrackerComponent } from './core-layout/_goal-tracker/goal-tracker.component';
+import { RouterModule } from '@angular/router';
 /** Główny komponent aplikacji */
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [GoalTrackerComponent],
+  imports: [RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
