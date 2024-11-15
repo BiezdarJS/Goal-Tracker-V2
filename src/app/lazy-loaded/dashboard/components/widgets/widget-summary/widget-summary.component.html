@@ -1,0 +1,82 @@
+<div class="hstack justify-content-between mb-20">
+  <h3 class="headline flex m-0">
+      Summary
+  </h3>
+  <button class="btn btn--no-style btn--sm btn-more-js">
+      <i class="icon icon--more"></i>
+  </button>
+</div>
+<!-- TODO - należałoby zamienić tą listę na pętlę po configu -->
+<ul class="summary list">
+  <li class="summary__item">
+      <i class="summary__icon summary__icon--goals"></i>
+      <p class="summary__number" *ngIf="this.allGoals; else emptyParagraph">
+          <span style="display: block;" class="subhead">
+              <!-- {{ this.allGoals.length }} -->
+          </span>
+          <span class="smaller">
+              Goals
+          </span>
+      </p>
+      <ng-template #emptyParagraph>
+        <p class="summary__number">
+          <span style="display: block;" class="subhead">
+            ?
+        </span>
+        <span class="smaller">
+            Goals
+        </span>
+        </p>
+      </ng-template>
+      <div class="summary__right">
+          <p class="summary__txt font-additional">
+              3 completed
+          </p>
+          <a href="#" class="summary__more"></a>
+      </div>
+  </li>
+  <li class="summary__item">
+      <i class="summary__icon summary__icon--tasks"></i>
+      <p class="summary__number" *ngIf="this.allTasks; else emptyParagraph">
+          <span style="display: block;" class="subhead">
+              <!-- {{ this.allTasks.length }} -->
+          </span>
+          <span class="smaller">
+              Tasks
+          </span>
+      </p>
+      <ng-template #emptyParagraph>
+        <p class="summary__number">
+          <span style="display: block;" class="subhead">
+            ?
+        </span>
+        <span class="smaller">
+            Goals
+        </span>
+        </p>
+      </ng-template>
+      <div class="summary__right">
+          <p class="summary__txt font-additional">
+              6 subtasks
+          </p>
+          <a href="#" class="summary__more"></a>
+      </div>
+  </li>
+  <li class="summary__item">
+      <i class="summary__icon summary__icon--loop"></i>
+      <p class="summary__number">
+          <span style="display: block;" class="subhead">
+              ?
+          </span>
+          <span class="smaller">
+              Habits
+          </span>
+      </p>
+      <div class="summary__right">
+          <p class="summary__txt font-additional">
+              2 new habits
+          </p>
+          <a href="#" class="summary__more"></a>
+      </div>
+  </li>
+</ul>

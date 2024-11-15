@@ -1,16 +1,7 @@
 <section class="dashboard">
   <section class="dashboard__top">
     <gt-widget [dashboardWidgetType]="DashboardWidgetTypeEnum.SUMMARY">
-      <div class="hstack justify-content-between mb-20">
-        <h3 class="headline flex m-0">
-            Summary
-        </h3>
-        <button class="btn btn--no-style btn--sm btn-more-js">
-            <i class="icon icon--more"></i>
-        </button>
-      </div>
-
+      <gt-widget-summary />
     </gt-widget>
   </section>
-
 </section>
