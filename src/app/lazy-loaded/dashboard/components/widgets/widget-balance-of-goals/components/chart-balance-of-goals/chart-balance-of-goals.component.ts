@@ -1,44 +1,39 @@
-import { Component, inject, Input } from '@angular/core';
-import { ActiveThemeService } from '@gtCoreServices/active-theme.service';
-import { chartColors } from '@gtShared/const/chart-colors';
-import { Subscription } from 'rxjs';
+import { Component, computed, inject, Input, OnInit, Signal } from '@angular/core';
 import { BalanceOfGoalsChartConfig } from './const/balance-of-goals-chart.config';
 import { ChartData } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfigService } from '@gtSharedServices/chart-config.service';
+import { ChartDataStoreService } from '@gtSharedServices/chart-data-store.service';
+import { IChartColorPalette } from '@gtSharedInterfaces/chart-color-palette.interface';
 /** Komponent wykresu wewnątrz BalanceOfGoals */
 @Component({
   selector: 'gt-chart-balance-of-goals',
   standalone: true,
   imports: [BaseChartDirective],
-  providers: [ChartConfigService],
+  providers: [ChartConfigService, ChartDataStoreService],
   templateUrl: './chart-balance-of-goals.component.html',
   styleUrl: './chart-balance-of-goals.component.scss'
 })
-export class ChartBalanceOfGoalsComponent {
+export class ChartBalanceOfGoalsComponent implements OnInit {
   /** Obiekt zawierający wszystkie cele */
   @Input() allGoals: any;
   /** Obecnie wyświetlany motyw */
   activeTheme!: string | null;
   /** Obecnie wyświetlany motyw */
   currentActiveTheme!: string | null;
-  /** Subskrypcja dla aktywnie wyświetlanego motywu */
-  subscription!: Subscription;
   /** Config dla wykresu */
   protected readonly balanceOfGoalsChartConfig = BalanceOfGoalsChartConfig;
   /** Dane dla wykresu BalanceOfGoals */
   balanceOfGoalsData!: ChartData<'doughnut'>;
-  /** Dane dla wykresu BalanceOfGoals */
-  chartColors: any = sessionStorage.getItem('theme') === 'theme-light' ? chartColors.themeLight : chartColors.themeDark;
   /** Serwis konfiguracji dla wykresów */
   chartConfigService = inject(ChartConfigService);
-  /** Serwis do zmiany i przechowywania danch o obecnie wyświetlanym motywie aplikacji -> light/dark */
-  setThemeService = inject(ActiveThemeService);
+  /** Serwis przechowywujący globalne dane dla wykresów  */
+  private chartDataStoreService = inject(ChartDataStoreService);
+  /** Obecnie wybrane kolory  */
+  public chartColors: Signal<IChartColorPalette | null> = computed(() => this.chartDataStoreService.chartColors());
 
 
   ngOnInit(): void {
-    // this.subscription = this.setThemeService.activeTheme.subscribe(themeName => this.themeName = themeName);
-    this.chartColors = sessionStorage.getItem('theme') === 'theme-light' ? chartColors.themeLight : chartColors.themeDark;
     this.initBalanceOfGoalsData();
   }
 
@@ -50,19 +45,14 @@ export class ChartBalanceOfGoalsComponent {
         {
           data: [300, 50, 100],
           backgroundColor: [
-            this.chartColors.green,
-            this.chartColors.yellow,
-            this.chartColors.red
+            this.chartColors()?.green,
+            this.chartColors()?.yellow,
+            this.chartColors()?.red
           ],
           hoverOffset: 4
         }
       ]
     };
-  }
-
-
-  ngOnDestroy() {
-    // this.subscription.unsubscribe();
   }
 
   ngAfterViewChecked():void {

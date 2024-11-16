@@ -1,1 +1,77 @@
-<p>widget-progress-towards-the-goal works!</p>
+<h3 class="headline d-flex">
+  Progress towards the goal
+</h3>
+<ul class="progress-towards-the-goal list">
+  <li class="progress-towards-the-goal-item">
+      <gt-chart-progress-towards-the-goal progressTowardsTheGoalChart1
+      [progressTowardsTheGoalConfig]="progressTowardsTheGoalConfig"
+      [progressTowardsTheGoalType]="'doughnut'"
+      [progressTowardsTheGoalData]="progressTowardsTheGoalData1">
+      </gt-chart-progress-towards-the-goal>
+      <div class="progress-towards-the-goal-item__right">
+          <p class="progress-towards-the-goal-item__status progress-towards-the-goal-item__status--inprogress">
+              In progress
+          </p>
+          <p class="smaller">
+              UI/UX Design Workshop
+          </p>
+          <p class="font-additional">
+              8 of 12 modules
+          </p>
+      </div>
+  </li>
+  <li class="progress-towards-the-goal-item">
+    <gt-chart-progress-towards-the-goal progressTowardsTheGoalChart2
+      [progressTowardsTheGoalConfig]="progressTowardsTheGoalConfig"
+      [progressTowardsTheGoalType]="'doughnut'"
+      [progressTowardsTheGoalData]="progressTowardsTheGoalData2">
+      </gt-chart-progress-towards-the-goal>
+      <div class="progress-towards-the-goal-item__right">
+          <p class="progress-towards-the-goal-item__status progress-towards-the-goal-item__status--inprogress">
+              In progress
+          </p>
+          <p class="smaller">
+              Kazan half marathon
+          </p>
+          <p class="font-additional">
+              8 of 12 modules
+          </p>
+      </div>
+  </li>
+  <li class="progress-towards-the-goal-item">
+    <gt-chart-progress-towards-the-goal progressTowardsTheGoalChart3
+      [progressTowardsTheGoalConfig]="progressTowardsTheGoalConfig"
+      [progressTowardsTheGoalType]="'doughnut'"
+      [progressTowardsTheGoalData]="progressTowardsTheGoalData3">
+      </gt-chart-progress-towards-the-goal>
+      <div class="progress-towards-the-goal-item__right">
+          <p class="progress-towards-the-goal-item__status progress-towards-the-goal-item__status--paused">
+              Paused
+          </p>
+          <p class="smaller">
+              TOEFL Exam
+          </p>
+          <p class="font-additional">
+              8 of 12 modules
+          </p>
+      </div>
+  </li>
+  <li class="progress-towards-the-goal-item">
+    <gt-chart-progress-towards-the-goal progressTowardsTheGoalChart4
+      [progressTowardsTheGoalConfig]="progressTowardsTheGoalConfig"
+      [progressTowardsTheGoalType]="'doughnut'"
+      [progressTowardsTheGoalData]="progressTowardsTheGoalData4">
+      </gt-chart-progress-towards-the-goal>
+      <div class="progress-towards-the-goal-item__right">
+          <p class="progress-towards-the-goal-item__status progress-towards-the-goal-item__status--inprogress">
+              In progress
+          </p>
+          <p class="smaller">
+              60 books per year
+          </p>
+          <p class="font-additional">
+              8 of 12 modules
+          </p>
+      </div>
+  </li>
+</ul>

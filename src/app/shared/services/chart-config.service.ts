@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Chart, DoughnutController, ArcElement, Tooltip, Legend } from 'chart.js';
-/** Serwis konfiguracji dla wykresów - globalny */
+/** Serwis konfiguracji dla wykresów  */
 @Injectable()
 export class ChartConfigService {
 

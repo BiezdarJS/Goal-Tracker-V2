@@ -6,16 +6,18 @@ import { AppThemeTypeEnum } from '../../shared/enums/app-theme-type.enum';
 })
 export class ActiveThemeService {
   /** Obecnie wyświetalny rodzaj motywu -> light/dark - prywatne */
-  private _activeTheme: WritableSignal<string | null> = signal(null);
+  private _activeTheme: WritableSignal<string | null> = signal(AppThemeTypeEnum.LIGHT);
   /** Obecnie wyświetalny rodzaj motywu -> light/dark - publiczne */
   public activeTheme: Signal<string | null> = computed(() => this._activeTheme());
-  public colors!: string;
+
+  constructor() {
+    console.log('ActiveThemeService: ', this.activeTheme());
+  }
 
   /** Obłsuga przełączania motywu light/dark */
   public setTheme(themeType:string): void {
     sessionStorage.setItem('theme', themeType);
     this._activeTheme.set(themeType);
-    this.colors = sessionStorage.getItem('theme') === AppThemeTypeEnum.LIGHT ? AppThemeTypeEnum.LIGHT : AppThemeTypeEnum.DARK;
 	}
 
   /** Obłsuga przełączania motywu light/dark */
