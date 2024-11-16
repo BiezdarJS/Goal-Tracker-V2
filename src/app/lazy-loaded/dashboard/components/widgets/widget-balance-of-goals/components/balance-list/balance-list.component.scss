@@ -1,9 +1,13 @@
 @import 'mq';
 @import 'colors';
 
+:host {
+  width: 80%;
+}
+
 .balance-list {
   display: inline-block;
-  width: 80%;
+
   @include mobile {
       width: auto;
   }

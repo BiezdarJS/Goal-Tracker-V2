@@ -4,7 +4,7 @@ import { AppThemeTypeEnum } from '../../shared/enums/app-theme-type.enum';
 @Injectable({
   providedIn: 'root'
 })
-export class SetThemeService {
+export class ActiveThemeService {
   /** Obecnie wyświetalny rodzaj motywu -> light/dark - prywatne */
   private _activeTheme: WritableSignal<string | null> = signal(null);
   /** Obecnie wyświetalny rodzaj motywu -> light/dark - publiczne */
