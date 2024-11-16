@@ -18,8 +18,8 @@ export class WidgetComponent {
         return 'widget--summary widget--28';
       case(DashboardWidgetTypeEnum.BALANCE_OF_GOALS) :
         return 'widget--44';
-      case(DashboardWidgetTypeEnum.CALENDAR) :
-        return 'widget--28 flex center-all'
+      case(DashboardWidgetTypeEnum.MINI_CALENDAR) :
+        return 'widget--28 center-all'
       case(DashboardWidgetTypeEnum.PROGRESS_TOWARDS_THE_GOAL) :
         return 'widget--progress-towards-the-goal'
       case(DashboardWidgetTypeEnum.MY_ACTIVITY) :

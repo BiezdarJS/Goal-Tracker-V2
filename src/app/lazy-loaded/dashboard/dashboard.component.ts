@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { WidgetComponent } from './components/widget/widget.component';
 import { WidgetSummaryComponent } from './components/widgets/widget-summary/widget-summary.component';
 import { WidgetBalanceOfGoalsComponent } from "./components/widgets/widget-balance-of-goals/widget-balance-of-goals.component";
+import { WidgetMiniCalendarComponent } from './components/widgets/widget-mini-calendar/widget-mini-calendar.component';
 /** Komponent dla widoku dashboard zawierający widgety do monitorowania celów */
 @Component({
   selector: 'gt-dashboard',
@@ -13,7 +14,8 @@ import { WidgetBalanceOfGoalsComponent } from "./components/widgets/widget-balan
     CommonModule,
     WidgetComponent,
     WidgetSummaryComponent,
-    WidgetBalanceOfGoalsComponent
+    WidgetBalanceOfGoalsComponent,
+    WidgetMiniCalendarComponent
 ],
   styleUrl: './dashboard.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

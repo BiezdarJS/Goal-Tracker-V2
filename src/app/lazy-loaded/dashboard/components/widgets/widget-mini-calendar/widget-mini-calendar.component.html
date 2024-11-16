@@ -1,1 +1,16 @@
-<p>widget-mini-calendar works!</p>
+<section class="calendar-month-header">
+  <div class="calendar-month-header-selected-month">
+    {{ headerMonthAndYear()  }}
+  </div>
+  <section class="calendar-month-header-selectors">
+    <span (click)="prevMonthSelector()">&lt;</span> <span (click)="presentMonthSelector()">Today</span> <span (click)="nextMontSelector()">&gt;</span>
+  </section>
+</section>
+<ol class="day-of-week">
+    @for (weekday of WEEKDAYS; track weekday) {
+      <li>
+        {{ weekday }}
+      </li>
+    }
+</ol>
+<ol class="days-grid" #calendarDaysElement></ol>
