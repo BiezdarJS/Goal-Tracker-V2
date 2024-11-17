@@ -9,19 +9,19 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        loadComponent: () => import('./lazy-loaded/dashboard/dashboard.component').then(m => m.DashboardComponent)
+        loadComponent: () => import('./main-content/dashboard/dashboard.component').then(m => m.DashboardComponent)
       },
       {
         path: 'my-goals',
-        loadComponent: () => import('./lazy-loaded/goals/goals.component').then(m => m.GoalsComponent)
+        loadComponent: () => import('./main-content/goals/goals.component').then(m => m.GoalsComponent)
       },
       {
         path: 'calendar',
-        loadComponent: () => import('./lazy-loaded/calendar/calendar.component').then(m => m.CalendarComponent)
+        loadComponent: () => import('./main-content/calendar/calendar.component').then(m => m.CalendarComponent)
       },
       {
         path: 'settings',
-        loadComponent: () => import('./lazy-loaded/settings/settings.component').then(m => m.SettingsComponent)
+        loadComponent: () => import('./main-content/settings/settings.component').then(m => m.SettingsComponent)
       },
     ]
   }
