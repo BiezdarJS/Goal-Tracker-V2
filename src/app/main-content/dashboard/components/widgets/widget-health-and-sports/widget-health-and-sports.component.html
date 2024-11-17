@@ -1,1 +1,10 @@
-<p>widget-health-and-sports works!</p>
+<div class="hstack justify-between mb-20">
+  <h3 class="headline flex m-0">
+      Health and sports
+  </h3>
+  <gt-select-shared
+    [options]="healthAndSportsOptionsConfig"
+    customClasses="select--dashboard select-health-and-sports"
+  />
+</div>
+<gt-chart-health-and-sports />
