@@ -3,7 +3,7 @@ a {
 }
 
 html {
-    font-size: 16px;
+    font-size: 62.5%;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     height: 100%;
@@ -134,13 +134,7 @@ p {
     align-items: center;
 }
 
-.m-0 {
-    margin: 0;
-}
 
-.mb-20 {
-    margin-bottom: 20px;
-}
 .mb-30 {
     margin-bottom: 30px;
 }
@@ -208,19 +202,6 @@ p {
     }
 }
 
-.justify-content-between {
-    justify-content: space-between;
-}
-.justify-content-center {
-    justify-content: center;
-}
-.justify-content-end {
-    justify-content: flex-end;
-}
-
-.align-items-center {
-    align-items: center;
-}
 
 
 // animations

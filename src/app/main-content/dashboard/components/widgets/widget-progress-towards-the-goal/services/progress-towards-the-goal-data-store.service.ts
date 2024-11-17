@@ -1,5 +1,4 @@
 import { computed, inject, Injectable, Signal } from '@angular/core';
-import { ActiveThemeService } from '@gtCoreServices/active-theme.service';
 import { textInCenter } from '@gtShared/utils/chart-utils';
 import { IChartColorPalette } from '@gtSharedInterfaces/chart-color-palette.interface';
 import { ChartDataStoreService } from '@gtSharedServices/chart-data-store.service';

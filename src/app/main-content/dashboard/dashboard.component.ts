@@ -6,6 +6,7 @@ import { WidgetSummaryComponent } from './components/widgets/widget-summary/widg
 import { WidgetBalanceOfGoalsComponent } from "./components/widgets/widget-balance-of-goals/widget-balance-of-goals.component";
 import { WidgetMiniCalendarComponent } from './components/widgets/widget-mini-calendar/widget-mini-calendar.component';
 import { WidgetProgressTowardsTheGoalComponent } from './components/widgets/widget-progress-towards-the-goal/widget-progress-towards-the-goal.component';
+import { WidgetMyActivityComponent } from "./components/widgets/widget-my-activity/widget-my-activity.component";
 /** Komponent dla widoku dashboard zawierający widgety do monitorowania celów */
 @Component({
   selector: 'gt-dashboard',
@@ -17,7 +18,9 @@ import { WidgetProgressTowardsTheGoalComponent } from './components/widgets/widg
     WidgetSummaryComponent,
     WidgetBalanceOfGoalsComponent,
     WidgetMiniCalendarComponent,
-    WidgetProgressTowardsTheGoalComponent
+    WidgetProgressTowardsTheGoalComponent,
+    WidgetMyActivityComponent,
+    WidgetMyActivityComponent
 ],
   styleUrl: './dashboard.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

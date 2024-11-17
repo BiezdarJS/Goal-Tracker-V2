@@ -1,7 +1,7 @@
 import {AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
 import { NgStyle } from '@angular/common';
 import { GT_ICONS_BASIC } from './enums/gt-icons.basic';
-/** Globalny komponent do wyświetlania ikon w aplikacji. */
+/** Sharowany komponent do wyświetlania ikon w aplikacji. */
 @Component({
     selector: 'gt-icon',
     standalone: true,
