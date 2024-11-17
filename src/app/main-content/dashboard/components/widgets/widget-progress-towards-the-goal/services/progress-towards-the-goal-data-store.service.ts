@@ -3,7 +3,7 @@ import { textInCenter } from '@gtShared/utils/chart-utils';
 import { IChartColorPalette } from '@gtSharedInterfaces/chart-color-palette.interface';
 import { ChartDataStoreService } from '@gtSharedServices/chart-data-store.service';
 import { ChartConfiguration } from 'chart.js';
-
+/** Serwis z danymi dla wykresów wewnątrz widgetu ProgressTowardsTheGoal */
 @Injectable()
 export class ProgressTowardsTheGoalDataStoreService {
   /** Serwis przechowywujący globalne dane dla wykresów  */
