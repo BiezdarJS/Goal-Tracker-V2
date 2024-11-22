@@ -20,16 +20,14 @@ import { ScriptLoaderService } from '@gtCoreServices/script-loader.service';
   styleUrl: './select.component.scss',
 })
 export class SelectComponent implements ControlValueAccessor, AfterViewInit {
-  private scriptElement: HTMLScriptElement | null = null;
+  /** Przyjmuje opcje dla tej instancji select */
   @Input() options: ISelectOption[] | undefined;
+  /** Przyjmuje customowe klasy dla tej instancji select */
   @Input() customClasses: string | undefined;
   /** Emituje referencję do tej instancji select */
   @ViewChild('selectElement') selectElement: ElementRef | undefined;
   /** Emituje referencję do tej instancji select */
   @Output() initializeSelectEmitter = new EventEmitter<ElementRef<any>>;
-
-  private renderer = inject(Renderer2);
-  private elementRef = inject(ElementRef);
 
   private _currentValue: WritableSignal<string> = signal('');
   public currentValue: Signal<string> = computed(() => this._currentValue());
