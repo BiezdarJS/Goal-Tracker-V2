@@ -23,8 +23,9 @@ export class SelectComponent implements ControlValueAccessor, AfterViewInit {
   private scriptElement: HTMLScriptElement | null = null;
   @Input() options: ISelectOption[] | undefined;
   @Input() customClasses: string | undefined;
+  /** Emituje referencję do tej instancji select */
   @ViewChild('selectElement') selectElement: ElementRef | undefined;
-
+  /** Emituje referencję do tej instancji select */
   @Output() initializeSelectEmitter = new EventEmitter<ElementRef<any>>;
 
   private renderer = inject(Renderer2);
@@ -57,7 +58,6 @@ export class SelectComponent implements ControlValueAccessor, AfterViewInit {
     this.scriptLoaderService.loadScript('./assets/libs/select.js')
       .then(() => {
         if ((window as any).Select) {
-          console.log('kalabanga!!!!!!!!!!!!');
           this.initializeLibrary();
         } else {
           throw new Error('Select.js did not initialize correctly');

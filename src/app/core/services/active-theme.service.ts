@@ -10,10 +10,6 @@ export class ActiveThemeService {
   /** Obecnie wyświetalny rodzaj motywu -> light/dark - publiczne */
   public activeTheme: Signal<string | null> = computed(() => this._activeTheme());
 
-  constructor() {
-    console.log('ActiveThemeService: ', this.activeTheme());
-  }
-
   /** Obłsuga przełączania motywu light/dark */
   public setTheme(themeType:string): void {
     sessionStorage.setItem('theme', themeType);

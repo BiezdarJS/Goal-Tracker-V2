@@ -16,6 +16,7 @@ export class WidgetMyActivityComponent {
   /** Config dla widgetu */
   protected readonly myActivityOptionsConfig = MyActivityOptionsConfig;
 
+  /** Inicjalizuje indywidualną instację Select */
   public initializeSelect(elementRef: ElementRef) {
     new (window as any).Select(elementRef, {
       placeholder: 'Week'

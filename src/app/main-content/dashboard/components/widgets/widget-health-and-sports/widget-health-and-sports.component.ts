@@ -15,6 +15,7 @@ export class WidgetHealthAndSportsComponent {
   /** Config dla widgetu */
   protected readonly healthAndSportsOptionsConfig = HealthAndSportsOptionsConfig;
 
+  /** Inicjalizuje indywidualną instację Select */
   public initializeSelect(elementRef: ElementRef) {
     new (window as any).Select(elementRef, {
       placeholder: 'Month'
