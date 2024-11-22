@@ -1,10 +1,7 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit } from '@angular/core';
 import { MyActivityOptionsConfig } from './const/my-activity-options.config';
 import { SelectComponent } from '@gtSharedComponents/select/select.component';
-import { ChartConfiguration, ChartData } from 'chart.js';
-import { MyActivityDataStoreService } from './services/my-activity-data-store.service';
 import { ChartMyActivityComponent } from './components/chart-my-activity/chart-my-activity.component';
-type NewType = ChartData<'line'>;
 
 /** Komponent widgetu MyActivity w dashboard */
 @Component({
@@ -18,4 +15,11 @@ type NewType = ChartData<'line'>;
 export class WidgetMyActivityComponent {
   /** Config dla widgetu */
   protected readonly myActivityOptionsConfig = MyActivityOptionsConfig;
+
+  public initializeSelect(elementRef: ElementRef) {
+    new (window as any).Select(elementRef, {
+      placeholder: 'Week'
+    });
+  }
+
 }

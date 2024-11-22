@@ -537,3 +537,4 @@ Select.prototype._onSearchChanged = function(e) {
   addClass(firstEl, "focus");
 };
 
+window.Select = Select;

@@ -5,6 +5,7 @@
   <gt-select-shared
     [options]="healthAndSportsOptionsConfig"
     customClasses="select--dashboard select-health-and-sports"
+    (initializeSelectEmitter)="initializeSelect($event)"
   />
 </div>
 <gt-chart-health-and-sports />

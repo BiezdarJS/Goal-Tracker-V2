@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit } from '@angular/core';
 import { ChartHealthAndSportsComponent } from './components/chart-health-and-sports/chart-health-and-sports.component';
 import { SelectComponent } from '@gtSharedComponents/select/select.component';
 import { HealthAndSportsOptionsConfig } from './const/health-and-sports-options.config';
@@ -12,6 +12,12 @@ import { HealthAndSportsOptionsConfig } from './const/health-and-sports-options.
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WidgetHealthAndSportsComponent {
-/** Config dla widgetu */
-protected readonly healthAndSportsOptionsConfig = HealthAndSportsOptionsConfig;
+  /** Config dla widgetu */
+  protected readonly healthAndSportsOptionsConfig = HealthAndSportsOptionsConfig;
+
+  public initializeSelect(elementRef: ElementRef) {
+    new (window as any).Select(elementRef, {
+      placeholder: 'Month'
+    });
+  }
 }

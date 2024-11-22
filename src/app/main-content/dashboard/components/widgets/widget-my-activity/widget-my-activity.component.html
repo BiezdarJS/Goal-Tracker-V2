@@ -5,6 +5,7 @@
   <gt-select-shared
     [options]="myActivityOptionsConfig"
     customClasses="select--dashboard select-my-activity"
+    (initializeSelectEmitter)="initializeSelect($event)"
   />
 </div>
 <gt-chart-my-activity  />
