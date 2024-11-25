@@ -9,6 +9,7 @@ import { WidgetProgressTowardsTheGoalComponent } from './components/widgets/widg
 import { WidgetMyActivityComponent } from "./components/widgets/widget-my-activity/widget-my-activity.component";
 import { WidgetHealthAndSportsComponent } from './components/widgets/widget-health-and-sports/widget-health-and-sports.component';
 import { WidgetTodayTasksComponent } from "./components/widgets/widget-today-tasks/widget-today-tasks.component";
+import { WidgetPortionOfMotivationComponent } from './components/widgets/widget-portion-of-motivation/widget-portion-of-motivation.component';
 /** Komponent dla widoku dashboard zawierający widgety do monitorowania celów */
 @Component({
   selector: 'gt-dashboard',
@@ -21,6 +22,7 @@ import { WidgetTodayTasksComponent } from "./components/widgets/widget-today-tas
     WidgetBalanceOfGoalsComponent,
     WidgetMiniCalendarComponent,
     WidgetProgressTowardsTheGoalComponent,
+    WidgetPortionOfMotivationComponent,
     WidgetMyActivityComponent,
     WidgetMyActivityComponent,
     WidgetHealthAndSportsComponent,
