@@ -10,5 +10,6 @@ export enum GT_ICONS_BASIC {
     MORE = 'more',
     TARGET = 'target',
     TARGET_WITH_ARROW = 'target-with-arrow',
-    TASK = 'task'
+    TASK = 'task',
+    PLUS = 'plus'
 }

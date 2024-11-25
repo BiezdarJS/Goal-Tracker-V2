@@ -1,1 +1,17 @@
-<p>widget-today-tasks works!</p>
+<div class="hstack justify-between mb-30">
+  <h3 class="headline d-flex m-0">
+      Today Tasks
+  </h3>
+  <div class="hstack">
+      <gt-button customClasses="btn--sm btn--green mr-15 modal-trigger" (click)="createNewTask()">
+        <gt-icon [icon]="GT_ICONS_BASIC.PLUS" [strokeColor]="IconColorEnum.WHITE" [size]="18" />
+      </gt-button>
+      <gt-button customClasses="btn--no-style btn--sm btn-more-js">
+        <gt-icon [icon]="GT_ICONS_BASIC.MORE" [fillColor]="IconColorEnum.DEFAULT" [size]="24" />
+      </gt-button>
+  </div>
+
+</div>
+<ul class="task-list list">
+<!-- TODO - dodać petlę po dostępnych taskach jak będzie stworzony request do celów i tasków -->
+</ul>
