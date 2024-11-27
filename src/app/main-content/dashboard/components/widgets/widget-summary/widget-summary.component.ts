@@ -24,5 +24,5 @@ protected readonly summaryWidgetConfig = SummaryWidgetConfig;
 
 
 // Goals
-allGoals: Array<any> = [];
+allGoals: string[] = [];
 }
