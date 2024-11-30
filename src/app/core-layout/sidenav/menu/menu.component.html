@@ -1,39 +1,14 @@
-<!-- TODO - należałoby zamienić te menu na pętlę po configu -->
 <ul class="menu list">
-  <li class="menu__item">
-      <a class="menu__link" routerLink="/">
-          <gt-icon
-            [icon]="GT_ICONS_BASIC.GRID"
-            [size]="24"
-            [fillColor]="IconColorEnum.DEFAULT"/>
-          <span>Dashboard</span>
-      </a>
-  </li>
-  <li class="menu__item">
-      <a class="menu__link" routerLink="/my-goals">
-          <gt-icon
-            [icon]="GT_ICONS_BASIC.TARGET"
-            [size]="24"
-            [strokeColor]="IconColorEnum.DEFAULT"/>
-          <span>My goals</span>
-      </a>
-  </li>
-  <li class="menu__item">
-      <a class="menu__link" routerLink="/calendar">
-          <gt-icon
-            [icon]="GT_ICONS_BASIC.CALENDAR"
-            [size]="24"
-            [fillColor]="IconColorEnum.DEFAULT"/>
-          <span>Calendar</span>
-      </a>
-  </li>
-  <li class="menu__item">
-      <a class="menu__link" routerLink="/settings">
-          <gt-icon
-            [icon]="GT_ICONS_BASIC.GEAR"
-            [size]="24"
-            [strokeColor]="IconColorEnum.DEFAULT" />
-          <span>Settings</span>
-      </a>
-  </li>
+  @for(menuItem of menuConfig; track menuItem) {
+    <li class="menu__item">
+        <a class="menu__link" [routerLink]="menuItem.routerLink">
+            <gt-icon
+              [icon]="menuItem.icon"
+              [size]="24"
+              [fillColor]="iconFillTypeEnum.FILL ? IconColorEnum.DEFAULT : ''"
+              [strokeColor]="iconFillTypeEnum.STROKE ? IconColorEnum.DEFAULT : ''"/>
+            <span>{{ menuItem.name }} </span>
+        </a>
+    </li>
+  }
 </ul>
