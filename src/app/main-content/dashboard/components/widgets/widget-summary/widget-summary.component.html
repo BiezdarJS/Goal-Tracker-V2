@@ -18,7 +18,17 @@
               [fillColor]="item.iconColor"/>
         <p class="summary__number">
             <span style="display: block;" class="subhead">
-                <!-- {{ this.allGoals.length }} -->
+                @switch(item.itemType) {
+                  @case (SummaryItemNameEnum.GOALS) {
+                    {{ goalsNumber() ? goalsNumber() : '' }}
+                  }
+                  @case (SummaryItemNameEnum.TASKS) {
+                    {{ tasksNumber() ? tasksNumber() : '' }}
+                  }
+                  @case (SummaryItemNameEnum.HABITS) {
+                    ?
+                  }
+                }
             </span>
             <span class="smaller">
                 {{ item.itemName }}
