@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { DatabaseReference, get, ref } from '@angular/fire/database';
 import { from, Observable } from 'rxjs';
-
+/** Serwis API do Firebase */
 @Injectable({
   providedIn: 'root'
 })

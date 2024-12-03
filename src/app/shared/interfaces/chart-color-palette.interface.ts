@@ -1,3 +1,4 @@
+/** Interfejs z kolorami w wykresach */
 export interface IChartColorPalette {
   lightDark: string;
   red: string;

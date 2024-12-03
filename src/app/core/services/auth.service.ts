@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-/** Serwis obsługi logowania */
+/** Serwis z narzędzami do autoryzacji użytkownika */
 @Injectable({
   providedIn: 'root'
 })

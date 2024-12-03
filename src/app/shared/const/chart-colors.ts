@@ -1,3 +1,4 @@
+/** Obiekt przechowujący kolory wykresów dla poszczególnych motywów aplikacji jasny/ciemny */
 export const chartColors = {
   themeLight: {
     lightDark: '#455964',
