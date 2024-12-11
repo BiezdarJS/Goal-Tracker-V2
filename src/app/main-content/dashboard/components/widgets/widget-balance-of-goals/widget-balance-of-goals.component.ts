@@ -8,15 +8,11 @@ import { IGoalCategoryCount } from './interfaces/goal-category-count.interface';
 @Component({
   selector: 'gt-widget-balance-of-goals',
   standalone: true,
-  imports: [ChartBalanceOfGoalsComponent, BalanceListComponent],
+  imports: [ChartBalanceOfGoalsComponent],
   providers: [DataStoreService],
   templateUrl: './widget-balance-of-goals.component.html',
   styleUrl: './widget-balance-of-goals.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WidgetBalanceOfGoalsComponent {
-
-
-
-
 }

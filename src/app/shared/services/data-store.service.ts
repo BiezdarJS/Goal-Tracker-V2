@@ -1,6 +1,7 @@
 import { computed, inject, Injectable, Signal, signal, WritableSignal } from '@angular/core';
 import { ApiService } from '@gtCoreServices/api.service';
 import { combineLatest, map, Observable } from 'rxjs';
+import { IGoalCategoryCount } from 'src/app/main-content/dashboard/components/widgets/widget-balance-of-goals/interfaces/goal-category-count.interface';
 /** Serwis przechowujący dane dla celów, tasków, itd. */
 @Injectable()
 export class DataStoreService {
@@ -28,6 +29,10 @@ export class DataStoreService {
     }
     return 0;
   });
+  /** Liczba zadań w poszczególnych kategoriach celów - prywatne */
+  private _goalCategoriesCounts: WritableSignal<IGoalCategoryCount[] | null> = signal(null);
+  /** Liczba zadań w poszczególnych kategoriach celów - publiczne */
+  public goalCategoriesCounts: Signal<IGoalCategoryCount[] | null> = computed(() => this._goalCategoriesCounts());
 
   constructor() {
     this.getAllGoals().subscribe((data:any) => {
@@ -36,10 +41,13 @@ export class DataStoreService {
     this.getAllTasks().subscribe((data:any) => {
       this._tasksList.set(data);
     });
+    this.getGoalCategoriesTasksCounts().subscribe((data: IGoalCategoryCount[]) => {
+      this._goalCategoriesCounts.set(data);
+    });
   }
 
   /** Zapytanie do BE o wszystkie dostępne cele */
-  public getAllGoals(): Observable<any> {
+  private getAllGoals(): Observable<any> {
     return this.apiService.getData('goals')
       .pipe(
         map((data: any) => {
@@ -55,7 +63,7 @@ export class DataStoreService {
   }
 
   /** Zapytanie do BE o wszystkie dostępne zadania (taski) */
-  public getAllTasks(): Observable<any> {
+  private getAllTasks(): Observable<any> {
     return this.apiService.getData('tasks')
     .pipe(
       map((data: any) => {
@@ -68,5 +76,30 @@ export class DataStoreService {
         })
       })
     );
+  }
+
+  /** Liczba zadań w poszczególnych kategoriach celów */
+  public getGoalCategoriesTasksCounts(): Observable<IGoalCategoryCount[]> {
+    return combineLatest([
+      this.getAllTasks(),
+      this.getAllGoals(),
+    ])
+    .pipe(
+      map(([tasks, goals]) => {
+        // Utwórz mapę dla goalId do kategorii
+        const goalCategoryMap = goals.reduce((acc: any, goal: any) => {
+          acc[goal.goalId] = goal.category;
+          return acc;
+        }, {});
+        // Użyj funkcji Reduce, do zliczenia zadania według kategorii
+        return tasks.reduce((acc: any, task: any) => {
+          const category = goalCategoryMap[task.goal_id];
+          if (category) {
+              acc[category] = (acc[category] || 0) + 1;
+          }
+          return acc;
+        }, {});
+      })
+    )
   }
 }

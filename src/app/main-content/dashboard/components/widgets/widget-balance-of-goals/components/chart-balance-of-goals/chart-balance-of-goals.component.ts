@@ -6,6 +6,7 @@ import { ChartConfigService } from '@gtSharedServices/chart-config.service';
 import { ChartDataStoreService } from '@gtSharedServices/chart-data-store.service';
 import { IChartColorPalette } from '@gtSharedInterfaces/chart-color-palette.interface';
 import { DataStoreService } from '@gtSharedServices/data-store.service';
+import { IGoalCategoryCount } from '../../interfaces/goal-category-count.interface';
 /** Komponent wykresu wewnątrz BalanceOfGoals */
 @Component({
   selector: 'gt-chart-balance-of-goals',
@@ -24,6 +25,8 @@ export class ChartBalanceOfGoalsComponent {
   private chartDataStoreService = inject(ChartDataStoreService);
   /** Liczba obecnie występujących celów - publiczne */
   public goalsNumber: Signal<number> = computed(() => this.dataStoreService.goalsNumber());
+  /** Liczba zadań w poszczególnych kategoriach */
+  public goalCategoriesCounts: Signal<IGoalCategoryCount[] | null> = computed(() => this.dataStoreService.goalCategoriesCounts());
   /** Obecnie wyświetlany motyw */
   activeTheme!: string | null;
   /** Obecnie wyświetlany motyw */
@@ -38,7 +41,7 @@ export class ChartBalanceOfGoalsComponent {
 
   constructor() {
     effect(() => {
-      if (this.goalsNumber()) {
+      if (this.goalsNumber() && this.goalCategoriesCounts()) {
         this.initBalanceOfGoalsData();
       }
     });
@@ -46,15 +49,18 @@ export class ChartBalanceOfGoalsComponent {
 
   /** Dane dla wykresu BalanceOfGoals */
   private initBalanceOfGoalsData(): void {
+    const chartValues = Object.values(this.goalCategoriesCounts() ?? {}) as unknown as number[];
     this.balanceOfGoalsData = {
       labels: [this.goalsNumber(), 'GOALS'],
       datasets: [
         {
-          data: [300, 50, 100],
+          data: chartValues,
           backgroundColor: [
             this.chartColors()?.green,
             this.chartColors()?.yellow,
-            this.chartColors()?.red
+            this.chartColors()?.red,
+            this.chartColors()?.orange,
+            this.chartColors()?.blue,
           ],
           hoverOffset: 4
         }
@@ -62,6 +68,7 @@ export class ChartBalanceOfGoalsComponent {
     };
   }
 
+  /** ngAfterViewChecked */
   ngAfterViewChecked():void {
    this.currentActiveTheme = this.activeTheme;
   }

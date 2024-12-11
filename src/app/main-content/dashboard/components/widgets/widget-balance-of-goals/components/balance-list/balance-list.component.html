@@ -1,5 +1,5 @@
 <ul class="balance-list list">
-  @for (item of (goalCategoriesCounts$ | async) | keyvalue; track item) {
+  @for (item of goalCategoriesCounts() | keyvalue; track item) {
     <li class="balance-list__item">
       <i class="balance-list__dot" [ngClass]="getBalanceListItemClass(item.key)"></i>
       <p class="balance-list__txt font-additional">
