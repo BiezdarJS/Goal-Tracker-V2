@@ -15,6 +15,6 @@ export class AppComponent {
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this.apiService.getData('goals').subscribe(data => console.log('To są dane: ', data));
+    // this.apiService.getData('goals').subscribe(data => console.log('To są dane: ', data));
   }
 }

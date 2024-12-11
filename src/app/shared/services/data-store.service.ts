@@ -1,6 +1,6 @@
 import { computed, inject, Injectable, Signal, signal, WritableSignal } from '@angular/core';
 import { ApiService } from '@gtCoreServices/api.service';
-import { Observable } from 'rxjs';
+import { combineLatest, map, Observable } from 'rxjs';
 /** Serwis przechowujący dane dla celów, tasków, itd. */
 @Injectable()
 export class DataStoreService {
@@ -39,12 +39,34 @@ export class DataStoreService {
   }
 
   /** Zapytanie do BE o wszystkie dostępne cele */
-  private getAllGoals(): Observable<any> {
-    return this.apiService.getData('goals');
+  public getAllGoals(): Observable<any> {
+    return this.apiService.getData('goals')
+      .pipe(
+        map((data: any) => {
+          return Object.keys(data).map((key: any) => {
+            const goal = data[key];
+            return {
+              goalId: key,
+              ...goal
+            }
+          })
+        })
+      );
   }
 
   /** Zapytanie do BE o wszystkie dostępne zadania (taski) */
-  private getAllTasks(): Observable<any> {
-    return this.apiService.getData('tasks');
+  public getAllTasks(): Observable<any> {
+    return this.apiService.getData('tasks')
+    .pipe(
+      map((data: any) => {
+        return Object.keys(data).map((key: any) => {
+          const task = data[key];
+          return {
+            taskId: key,
+            ...task
+          }
+        })
+      })
+    );
   }
 }

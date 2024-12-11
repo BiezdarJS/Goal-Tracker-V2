@@ -1,39 +1,10 @@
-<!-- TODO - należałoby zamienić tą listę na pętlę po configu -->
 <ul class="balance-list list">
-  <li class="balance-list__item">
-      <i class="balance-list__dot balance-list__dot--family"></i>
+  @for (item of (goalCategoriesCounts$ | async) | keyvalue; track item) {
+    <li class="balance-list__item">
+      <i class="balance-list__dot" [ngClass]="getBalanceListItemClass(item.key)"></i>
       <p class="balance-list__txt font-additional">
-          Family/communication 24
+          {{ item.key + ': ' + item.value }}
       </p>
   </li>
-  <li class="balance-list__item">
-      <i class="balance-list__dot balance-list__dot--money"></i>
-      <p class="balance-list__txt font-additional">
-          Money 24
-      </p>
-  </li>
-  <li class="balance-list__item">
-      <i class="balance-list__dot balance-list__dot--career"></i>
-      <p class="balance-list__txt font-additional">
-          Work/career 24
-      </p>
-  </li>
-  <li class="balance-list__item">
-      <i class="balance-list__dot balance-list__dot--health"></i>
-      <p class="balance-list__txt font-additional">
-          Health and sports 24
-      </p>
-  </li>
-  <li class="balance-list__item">
-      <i class="balance-list__dot balance-list__dot--self"></i>
-      <p class="balance-list__txt font-additional">
-          Self-knowledge 24
-      </p>
-  </li>
-  <li class="balance-list__item">
-      <i class="balance-list__dot balance-list__dot--inspirations"></i>
-      <p class="balance-list__txt font-additional">
-          Travels 24
-      </p>
-  </li>
+  }
 </ul>
