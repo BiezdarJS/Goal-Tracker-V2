@@ -3,6 +3,7 @@ import { BaseChartDirective } from 'ng2-charts';
 import { MyActivityDataStoreService } from '../../services/my-activity-data-store.service';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { ChartDataStoreService } from '@gtSharedServices/chart-data-store.service';
+import { CurrentSelectValueEnum } from '@gtSharedComponents/select/enums/current-select-value.enum';
 
 @Component({
   selector: 'gt-chart-my-activity',
@@ -13,10 +14,15 @@ import { ChartDataStoreService } from '@gtSharedServices/chart-data-store.servic
   styleUrl: './chart-my-activity.component.scss'
 })
 export class ChartMyActivityComponent {
-  @Input('myActicitySelectValue') myActicitySelectValue!:string;
-
+  /** Serwis z danymi dla wykresu wewnątrz widgetu MyActivity */
+  @Input('myActivityCurrentSelectValue') myActivityCurrentSelectValue: CurrentSelectValueEnum | null = CurrentSelectValueEnum.WEEK;
+  /** Serwis z danymi dla wykresu wewnątrz widgetu MyActivity */
   private myActivityDataStoreService = inject(MyActivityDataStoreService);
   public myActicityChartConfig: ChartConfiguration<'line'>['options'] = this.myActivityDataStoreService.myActicityChartConfig;
-  // public myActivityDataWeek: ChartData<'line'> | undefined = this.myActivityDataStoreService.myActivityDataWeek;
+  /** Dostępne wartości select dla MyActivity chart  */
+  protected readonly CurrentSelectValueEnum = CurrentSelectValueEnum;
+
   public myActivityDataMonth: ChartData<'line'> | undefined = this.myActivityDataStoreService.myActivityDataMonth;
+
+  public myActivityDataWeek: ChartData<'line'> | undefined = this.myActivityDataStoreService.myActivityDataWeek;
 }

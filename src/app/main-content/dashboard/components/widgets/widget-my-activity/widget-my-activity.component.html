@@ -6,6 +6,9 @@
     [options]="myActivityOptionsConfig"
     customClasses="select--dashboard select-my-activity"
     (initializeSelectEmitter)="initializeSelect($event)"
+    (change)="setMyActivityCurrentSelectValueOnSelectChange($event)"
   />
 </div>
-<gt-chart-my-activity  />
+
+<gt-chart-my-activity [myActivityCurrentSelectValue]="myActivityCurrentSelectValue()" />
+

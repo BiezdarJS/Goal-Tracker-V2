@@ -1,5 +1,7 @@
+import { CurrentSelectValueEnum } from "../enums/current-select-value.enum";
+
 /** Opcja select */
 export interface ISelectOption {
-  value: string;
+  value: CurrentSelectValueEnum;
   content: string;
 }

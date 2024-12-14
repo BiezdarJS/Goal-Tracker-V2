@@ -1,7 +1,9 @@
-import { computed, inject, Injectable, Signal } from '@angular/core';
+import { computed, inject, Injectable, signal, Signal, WritableSignal } from '@angular/core';
+import { CurrentSelectValueEnum } from '@gtSharedComponents/select/enums/current-select-value.enum';
 import { IChartColorPalette } from '@gtSharedInterfaces/chart-color-palette.interface';
 import { ChartDataStoreService } from '@gtSharedServices/chart-data-store.service';
 import { ChartConfiguration } from 'chart.js';
+
 /** Serwis z danymi dla wykresu wewnątrz widgetu MyActivity */
 @Injectable()
 export class MyActivityDataStoreService {
@@ -9,6 +11,11 @@ export class MyActivityDataStoreService {
   private chartDataStoreService = inject(ChartDataStoreService);
   /** Obecnie wybrane kolory  */
   public chartColors: Signal<IChartColorPalette | null> = computed(() => this.chartDataStoreService.chartColors());
+  /** Obecnie My Activity - prywatne */
+  private _myActivityCurrentSelectValue: WritableSignal<CurrentSelectValueEnum | null> = signal(null);
+  /** Obecnie My Activity - publiczne */
+  public myActivityCurrentSelectValue: Signal<CurrentSelectValueEnum | null> = computed(() => this._myActivityCurrentSelectValue());
+
 
   /** Config dla wykresu MyActivity */
   public myActicityChartConfig: ChartConfiguration<'line'>['options'] = {
@@ -71,7 +78,7 @@ export class MyActivityDataStoreService {
       label: "Health and sports",
       backgroundColor: this.chartColors()?.yellow,
       borderColor: this.chartColors()?.yellow,
-      data: undefined
+      data: [3, 1, 2, 3, 2, 5, 8],
     }]
   }
 
@@ -88,7 +95,12 @@ export class MyActivityDataStoreService {
       label: "More data",
       backgroundColor: this.chartColors()?.red,
       borderColor: this.chartColors()?.red,
-      data: [6, 4, 2, 5, 1, 2, 6, 2, 1, 5,2, 4]
+      data: [6, 4, 2, 5, 1, 2, 6, 2, 1, 5, 2, 4]
     }]
+  }
+
+  /** Ustawia wartość selecta wewnątrz myActivity */
+  public setMyActivityCurrentSelectValue(value: CurrentSelectValueEnum) {
+    this._myActivityCurrentSelectValue.set(value);
   }
 }

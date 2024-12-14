@@ -1,12 +1,13 @@
+import { CurrentSelectValueEnum } from "@gtSharedComponents/select/enums/current-select-value.enum";
 import { ISelectOption } from "@gtSharedComponents/select/interfaces/select-option.interface";
 
 export const HealthAndSportsOptionsConfig: ISelectOption[] = [
   {
-    value: 'week',
+    value: CurrentSelectValueEnum.WEEK,
     content: 'Week'
   },
   {
-    value: 'month',
+    value: CurrentSelectValueEnum.MONTH,
     content: 'Month'
   },
 ]

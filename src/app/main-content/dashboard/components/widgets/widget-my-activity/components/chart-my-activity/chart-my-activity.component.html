@@ -1,7 +1,25 @@
 <div class="chart-container" style="position: relative; height:100%; width:100%">
-      <canvas baseChart class="myActivityChart"
-      [options]="myActicityChartConfig"
-      [type]="'line'"
-      [data]="myActivityDataMonth">
-    </canvas>
+      @switch(myActivityCurrentSelectValue) {
+        @case(CurrentSelectValueEnum.WEEK) {
+          <canvas baseChart class="myActivityChart"
+            [options]="myActicityChartConfig"
+            [type]="'line'"
+            [data]="myActivityDataWeek">
+          </canvas>
+        }
+        @case(CurrentSelectValueEnum.MONTH) {
+          <canvas baseChart class="myActivityChart"
+            [options]="myActicityChartConfig"
+            [type]="'line'"
+            [data]="myActivityDataMonth">
+          </canvas>
+        }
+        @default {
+          <canvas baseChart class="myActivityChart"
+            [options]="myActicityChartConfig"
+            [type]="'line'"
+            [data]="myActivityDataWeek">
+          </canvas>
+        }
+      }
 </div>
