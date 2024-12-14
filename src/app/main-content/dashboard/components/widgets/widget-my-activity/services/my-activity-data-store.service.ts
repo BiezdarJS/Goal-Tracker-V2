@@ -3,7 +3,6 @@ import { CurrentSelectValueEnum } from '@gtSharedComponents/select/enums/current
 import { IChartColorPalette } from '@gtSharedInterfaces/chart-color-palette.interface';
 import { ChartDataStoreService } from '@gtSharedServices/chart-data-store.service';
 import { ChartConfiguration } from 'chart.js';
-
 /** Serwis z danymi dla wykresu wewnątrz widgetu MyActivity */
 @Injectable()
 export class MyActivityDataStoreService {
@@ -11,9 +10,9 @@ export class MyActivityDataStoreService {
   private chartDataStoreService = inject(ChartDataStoreService);
   /** Obecnie wybrane kolory  */
   public chartColors: Signal<IChartColorPalette | null> = computed(() => this.chartDataStoreService.chartColors());
-  /** Obecnie My Activity - prywatne */
+  /** Obecna wartość select dla MyActivity - prywatne */
   private _myActivityCurrentSelectValue: WritableSignal<CurrentSelectValueEnum | null> = signal(null);
-  /** Obecnie My Activity - publiczne */
+  /** Obecna wartość select dla MyActivity - publiczne */
   public myActivityCurrentSelectValue: Signal<CurrentSelectValueEnum | null> = computed(() => this._myActivityCurrentSelectValue());
 
 
@@ -99,7 +98,7 @@ export class MyActivityDataStoreService {
     }]
   }
 
-  /** Ustawia wartość selecta wewnątrz myActivity */
+  /** Ustawia wartość selecta dla wykresu myActivity */
   public setMyActivityCurrentSelectValue(value: CurrentSelectValueEnum) {
     this._myActivityCurrentSelectValue.set(value);
   }
