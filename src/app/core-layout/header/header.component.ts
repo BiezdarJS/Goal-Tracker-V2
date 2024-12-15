@@ -5,6 +5,8 @@ import { ThemeTogglerComponent } from '../../shared/components/theme-toggler/the
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { GT_ICONS_BASIC } from '../../shared/components/icon/enums/gt-icons.basic';
 import { IconColorEnum } from '../../shared/enums/icon-color.enum';
+import { SearchInputComponent } from '@gtSharedComponents/search-input/search-input.component';
+import { InputTypeEnum } from '@gtSharedComponents/search-input/enums/input-type.enum';
 /** Komponent headera aplikacji */
 @Component({
   selector: 'gt-header',
@@ -14,6 +16,7 @@ import { IconColorEnum } from '../../shared/enums/icon-color.enum';
     HeaderDropdownComponent,
     ThemeTogglerComponent,
     UserComponent,
+    SearchInputComponent
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
@@ -32,6 +35,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   protected readonly GT_ICONS_BASIC = GT_ICONS_BASIC;
   /** Enum dla dostępnych kolorów ikon */
   protected readonly IconColorEnum = IconColorEnum;
+  /** Enum dla dostępnych kolorów ikon */
+  protected readonly InputTypeEnum = InputTypeEnum;
 
   /** OnInit */
   ngOnInit():void {

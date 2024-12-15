@@ -11,5 +11,6 @@ export enum GT_ICONS_BASIC {
     TARGET = 'target',
     TARGET_WITH_ARROW = 'target-with-arrow',
     TASK = 'task',
-    PLUS = 'plus'
+    PLUS = 'plus',
+    MAGNIFYING_GLASS = 'magnifying-glass'
 }

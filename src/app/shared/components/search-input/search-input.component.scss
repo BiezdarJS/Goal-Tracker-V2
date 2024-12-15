@@ -1,0 +1,190 @@
+@import 'colors';
+@import 'variables-misc';
+
+:host {
+  width: 100%;
+}
+
+gt-icon {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 15px;
+  margin: auto 0;
+}
+
+.form-field {
+  position: relative;
+  width: 100%;
+  &__wrap {
+      margin: 0 0 25px;
+  }
+  &__label {
+      color: #6e7a90;
+      display: block;
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0 0 15px;
+  }
+  &__input {
+      border: none;
+      display: block;
+      font-size: 1.6rem;
+      outline: none;
+      width: inherit;
+      margin: 0;
+      &:focus {
+          border-color: #b7ecdc;
+      }
+      &--border {
+          border-radius: 30px;
+          border: 2px solid transparent;
+          box-shadow: 0 2px 2px #ddd;
+          &-invalid {
+            border: 1px solid #f74040!important;
+          }
+      }
+
+      &--search {
+          border-radius: 16px;
+          box-shadow: $box-shadow;
+          padding: 15px 40px 15px 15px;
+          margin: 0;
+      }
+
+      &--password {
+          padding: 15px 40px 15px 50px;
+          height: 53px;
+      }
+      &--edit {
+          padding: 15px 40px 15px 50px;
+      }
+      &--user {
+          padding: 15px 15px 15px 50px;
+
+          &:focus {
+              border-color: #a0b7fd;
+              box-shadow: none;
+          }
+      }
+      &--email {
+          padding: 15px 15px 15px 50px;
+
+          &:focus {
+              border-color: #a0b7fd;
+              box-shadow: none;
+          }
+      }
+      &--diamond {
+        padding: 15px 15px 15px 50px;
+        &:focus {
+            border-color: #a0b7fd;
+            box-shadow: none;
+        }
+      }
+  }
+
+  &--user,
+  &--email,
+  &--phone,
+  &--password {
+      &:before {
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          border-radius: 50%;
+          content: "";
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          position: absolute;
+          left: 15px;
+      }
+      &:after {
+        border: 1px solid #a0b7fd;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        border-radius: 50%;
+        content: "";
+        display: inline-block;
+        width: 27px;
+        height: 27px;
+        position: absolute;
+        left: 12px;
+    }
+  }
+  &--user {
+      &:before {
+        background-color: #a0b7fd;
+        mask: url('/assets/icons/user.svg');
+        mask-size: 70% auto;
+        mask-position: center;
+        mask-repeat: no-repeat;
+      }
+  }
+  &--email {
+      &:before {
+        background-color: #a0b7fd;
+        mask-image: url('/assets/icons/letter.svg');
+        mask-size: 70% auto;
+        mask-position: center;
+        mask-repeat: no-repeat;
+      }
+  }
+  &--phone {
+    &:before {
+      background-color: #a0b7fd;
+      mask-image: url('/assets/icons/phone.svg');
+      mask-size: 70% auto;
+      mask-position: center;
+      mask-repeat: no-repeat;
+    }
+  }
+
+  &--password {
+      &:before {
+        background-color: #a0b7fd;
+        mask-image: url('/assets/icons/lock.svg');
+        mask-size: 70% auto;
+        mask-position: center;
+        mask-repeat: no-repeat;
+      }
+      .password-toggle {
+              &:after {
+                mask-image: url('/assets/icons/eye.svg');
+              }
+          }
+
+      &.swap-on {
+          .password-toggle {
+              &:after {
+                mask-image: url('/assets/icons/eye-off.svg');
+              }
+          }
+      }
+  }
+  &--diamond {
+    &:before {
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      border-radius: 50%;
+      content: "";
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      left: 11px;
+    }
+    &:before {
+      background-image: url('/assets/icons/diamond-ico.png');
+      background-size: 70% auto;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+}
+}

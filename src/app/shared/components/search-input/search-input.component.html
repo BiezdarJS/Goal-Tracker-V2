@@ -1,0 +1,11 @@
+<div class="form-field" [ngClass]="currentInputWrapperClasses()">
+  <input
+    #formControlInput
+    class="form-field__input"
+    [ngClass]="currentInputClasses()"
+    type="text"
+    [placeholder]="placeholder"
+    [ngModel]="currentValue()"
+    (input)="onInput(formControlInput.value)">
+    <gt-icon [icon]="GT_ICONS_BASIC.MAGNIFYING_GLASS" [size]="20" [strokeColor]="IconColorEnum.DEFAULT" />
+</div>
