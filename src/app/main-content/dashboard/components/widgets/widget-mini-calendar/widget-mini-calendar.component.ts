@@ -32,11 +32,11 @@ export class WidgetMiniCalendarComponent {
   /** Obecnie wybrany miesiąc */
   private selectedMonth!:dayjs.Dayjs;
   /** Dni z poprzedniego miesiąca w kalendarzu */
-  private previousMonthDays!: Array<ICalendarDays>;
+  private previousMonthDays!: ICalendarDays[];
   /** Dni z następnego miesiąca w kalendarzu */
-  private nextMonthDays!: Array<ICalendarDays>;
+  private nextMonthDays!: ICalendarDays[];
   /** Dni z obecnie wybranego miesiąca w kalendarzu */
-  private currentMonthDays!: Array<ICalendarDays>;
+  private currentMonthDays!: ICalendarDays[];
 
   /** OnInit */
   ngOnInit():void {

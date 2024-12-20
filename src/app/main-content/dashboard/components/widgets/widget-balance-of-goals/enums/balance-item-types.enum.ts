@@ -1,3 +1,4 @@
+/** Dostępne typy w wykresie balance-of-goals */
 export enum BalanceItemTypeEnum {
   HEALTH_AND_SPORTS = 'health and sports',
   MONEY = 'money',

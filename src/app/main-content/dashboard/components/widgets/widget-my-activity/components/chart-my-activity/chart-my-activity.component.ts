@@ -4,7 +4,7 @@ import { MyActivityDataStoreService } from '../../services/my-activity-data-stor
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { ChartDataStoreService } from '@gtSharedServices/chart-data-store.service';
 import { CurrentSelectValueEnum } from '@gtSharedComponents/select/enums/current-select-value.enum';
-
+/** Komponent wykresu MyActivity */
 @Component({
   selector: 'gt-chart-my-activity',
   standalone: true,
@@ -15,7 +15,7 @@ import { CurrentSelectValueEnum } from '@gtSharedComponents/select/enums/current
 })
 export class ChartMyActivityComponent {
   /** Serwis z danymi dla wykresu wewnątrz widgetu MyActivity */
-  @Input('myActivityCurrentSelectValue') myActivityCurrentSelectValue: CurrentSelectValueEnum | null = CurrentSelectValueEnum.WEEK;
+  @Input() myActivityCurrentSelectValue: CurrentSelectValueEnum | null = CurrentSelectValueEnum.WEEK;
   /** Serwis z danymi dla wykresu wewnątrz widgetu MyActivity */
   private myActivityDataStoreService = inject(MyActivityDataStoreService);
   public myActicityChartConfig: ChartConfiguration<'line'>['options'] = this.myActivityDataStoreService.myActicityChartConfig;

@@ -5,7 +5,6 @@ import { ChartMyActivityComponent } from './components/chart-my-activity/chart-m
 import { MyActivityDataStoreService } from './services/my-activity-data-store.service';
 import { ChartDataStoreService } from '@gtSharedServices/chart-data-store.service';
 import { CurrentSelectValueEnum } from '@gtSharedComponents/select/enums/current-select-value.enum';
-
 /** Komponent widgetu MyActivity w dashboard */
 @Component({
   selector: 'gt-widget-my-activity',

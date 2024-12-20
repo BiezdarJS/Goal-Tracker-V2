@@ -1,6 +1,6 @@
 import { textInCenterWithLineBreak } from "@gtShared/utils/chart-utils";
 import { ChartConfiguration } from "chart.js";
-
+/** Config dla wykresu Balance od Goals */
 export const BalanceOfGoalsChartConfig: ChartConfiguration<'doughnut'>['options'] = {
   cutout: '90%',
   elements: {

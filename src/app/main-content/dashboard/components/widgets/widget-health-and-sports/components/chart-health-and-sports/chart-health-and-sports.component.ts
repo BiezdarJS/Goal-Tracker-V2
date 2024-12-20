@@ -4,7 +4,7 @@ import { ChartConfiguration, ChartData } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { HealthAndSportsDataStoreService } from '../../services/health-and-sports-data-store.service';
 import { CurrentSelectValueEnum } from '@gtSharedComponents/select/enums/current-select-value.enum';
-
+/** Komponent główny dla wykresu Health and Sports */
 @Component({
   selector: 'gt-chart-health-and-sports',
   standalone: true,
@@ -15,7 +15,7 @@ import { CurrentSelectValueEnum } from '@gtSharedComponents/select/enums/current
 })
 export class ChartHealthAndSportsComponent {
   /** Serwis z danymi dla wykresu wewnątrz widgetu MyActivity */
-  @Input('healthAndSportsCurrentSelectValue') healthAndSportsCurrentSelectValue: CurrentSelectValueEnum | null = CurrentSelectValueEnum.WEEK;
+  @Input() healthAndSportsCurrentSelectValue: CurrentSelectValueEnum | null = CurrentSelectValueEnum.WEEK;
   private healthAndSportsDataStoreService = inject(HealthAndSportsDataStoreService);
   public healthAndSportsChartConfig: ChartConfiguration<'bar'>['options'] = this.healthAndSportsDataStoreService.healthAndSportsChartConfig;
   /** Dane dla */

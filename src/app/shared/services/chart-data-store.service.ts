@@ -5,9 +5,10 @@ import { IChartColorPalette } from '@gtSharedInterfaces/chart-color-palette.inte
 /** Serwis przechowywujący globalne dane dla wykresów  */
 @Injectable()
 export class ChartDataStoreService {
-
+  /** Serwis do zmiany i przechowywania danch o obecnie wyświetlanym motywie aplikacji -> light/dark */
   activeThemeService = inject(ActiveThemeService);
 
+  /** Dostępne kolory w wykresach w zależności od motywu light/dark */
   public chartColors: Signal<IChartColorPalette | null> = computed(() => {
     const theme = this.activeThemeService.activeTheme();
     if (theme === AppThemeTypeEnum.LIGHT) {
