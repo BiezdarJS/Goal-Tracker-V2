@@ -1,6 +1,7 @@
 import { GT_ICONS_BASIC } from "@gtSharedComponents/icon/enums/gt-icons.basic";
-import { ISummaryWidgetItem, SummaryItemNameEnum } from "../interfaces/summary-widget-item.interface";
-
+import { ISummaryWidgetItem } from "../interfaces/summary-widget-item.interface";
+import { SummaryItemNameEnum } from "../enums/summary-item.enum";
+/** Config dla widgetu SummaryItem */
 export const SummaryWidgetConfig: ISummaryWidgetItem[] = [
   {
     itemType: SummaryItemNameEnum.GOALS,

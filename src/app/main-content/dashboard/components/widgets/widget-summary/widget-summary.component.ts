@@ -5,7 +5,7 @@ import { GT_ICONS_BASIC } from '@gtSharedComponents/icon/enums/gt-icons.basic';
 import { IconComponent } from '@gtSharedComponents/icon/icon.component';
 import { SummaryWidgetConfig } from './const/widget-summary.config';
 import { DataStoreService } from '@gtSharedServices/data-store.service';
-import { SummaryItemNameEnum } from './interfaces/summary-widget-item.interface';
+import { SummaryItemNameEnum } from './enums/summary-item.enum';
 /** Komponent widgetu Summary w dashboard */
 @Component({
   selector: 'gt-widget-summary',
