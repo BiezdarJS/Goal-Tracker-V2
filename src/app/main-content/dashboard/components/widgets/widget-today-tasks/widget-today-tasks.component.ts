@@ -19,6 +19,5 @@ export class WidgetTodayTasksComponent {
   protected readonly IconColorEnum = IconColorEnum;
 
   createNewTask() {
-
   }
 }

@@ -1,16 +1,15 @@
-import { ChangeDetectionStrategy, Component, computed, ElementRef, inject, OnInit, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, ElementRef, inject, Signal } from '@angular/core';
 import { ChartHealthAndSportsComponent } from './components/chart-health-and-sports/chart-health-and-sports.component';
 import { SelectComponent } from '@gtSharedComponents/select/select.component';
 import { HealthAndSportsOptionsConfig } from './const/health-and-sports-options.config';
 import { HealthAndSportsDataStoreService } from './services/health-and-sports-data-store.service';
-import { ChartDataStoreService } from '@gtSharedServices/chart-data-store.service';
 import { CurrentSelectValueEnum } from '@gtSharedComponents/select/enums/current-select-value.enum';
 /** Komponent widgetu HealthAndSports w dashboard */
 @Component({
   selector: 'gt-widget-health-and-sports',
   standalone: true,
   imports: [SelectComponent, ChartHealthAndSportsComponent],
-  providers: [HealthAndSportsDataStoreService, ChartDataStoreService],
+  providers: [HealthAndSportsDataStoreService],
   templateUrl: './widget-health-and-sports.component.html',
   styleUrl: './widget-health-and-sports.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

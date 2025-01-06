@@ -10,6 +10,8 @@ import { WidgetMyActivityComponent } from "./components/widgets/widget-my-activi
 import { WidgetHealthAndSportsComponent } from './components/widgets/widget-health-and-sports/widget-health-and-sports.component';
 import { WidgetTodayTasksComponent } from "./components/widgets/widget-today-tasks/widget-today-tasks.component";
 import { WidgetPortionOfMotivationComponent } from './components/widgets/widget-portion-of-motivation/widget-portion-of-motivation.component';
+import { DataStoreService } from '@gtSharedServices/data-store.service';
+import { ChartDataStoreService } from '@gtSharedServices/chart-data-store.service';
 /** Komponent dla widoku dashboard zawierający widgety do monitorowania celów */
 @Component({
   selector: 'gt-dashboard',
@@ -27,7 +29,8 @@ import { WidgetPortionOfMotivationComponent } from './components/widgets/widget-
     WidgetMyActivityComponent,
     WidgetHealthAndSportsComponent,
     WidgetTodayTasksComponent
-],
+  ],
+  providers: [DataStoreService, ChartDataStoreService],
   styleUrl: './dashboard.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })

@@ -3,14 +3,13 @@ import { MyActivityOptionsConfig } from './const/my-activity-options.config';
 import { SelectComponent } from '@gtSharedComponents/select/select.component';
 import { ChartMyActivityComponent } from './components/chart-my-activity/chart-my-activity.component';
 import { MyActivityDataStoreService } from './services/my-activity-data-store.service';
-import { ChartDataStoreService } from '@gtSharedServices/chart-data-store.service';
 import { CurrentSelectValueEnum } from '@gtSharedComponents/select/enums/current-select-value.enum';
 /** Komponent widgetu MyActivity w dashboard */
 @Component({
   selector: 'gt-widget-my-activity',
   standalone: true,
   imports: [SelectComponent, ChartMyActivityComponent],
-  providers: [MyActivityDataStoreService, ChartDataStoreService],
+  providers: [MyActivityDataStoreService],
   templateUrl: './widget-my-activity.component.html',
   styleUrl: './widget-my-activity.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, effect, inject, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, Signal } from '@angular/core';
 import { ButtonComponent } from '@gtSharedComponents/button/button.component';
 import { IconColorEnum } from '@gtShared/enums/icon-color.enum';
 import { GT_ICONS_BASIC } from '@gtSharedComponents/icon/enums/gt-icons.basic';
@@ -11,7 +11,6 @@ import { SummaryItemNameEnum } from './enums/summary-item.enum';
   selector: 'gt-widget-summary',
   standalone: true,
   imports: [IconComponent, ButtonComponent],
-  providers: [DataStoreService],
   templateUrl: './widget-summary.component.html',
   styleUrl: './widget-summary.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
